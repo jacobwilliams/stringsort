@@ -237,8 +237,8 @@
                         dmnmx   = str(j)
                         str(j)   = str(j-1)
                         str(j-1) = dmnmx
-                    enddo
-                enddo insertion
+                    end do
+                end do insertion
 
             elseif ( endd-start>select ) then
 
@@ -314,7 +314,8 @@
 !********************************************************************************
 !>
 !  Sorts a character array `str` in increasing order.
-!  Uses a basic recursive quicksort.
+!  Uses a basic recursive quicksort
+!  (with insertion sort for partitions with <= 20 elements).
 
     subroutine lexical_sort_recursive(str,case_sensitive)
 
@@ -338,12 +339,33 @@
         integer,intent(in) :: ilow
         integer,intent(in) :: ihigh
 
-        integer :: ipivot
+        integer :: ipivot !! pivot element
+        integer :: i      !! counter
+        integer :: j      !! counter
 
-        if (ilow < ihigh) then
+        integer,parameter :: max_size_for_insertion_sort = 20
+            !! max size for using insertion sort.
+
+        if ( ihigh-ilow<=max_size_for_insertion_sort .and. ihigh>ilow ) then
+
+            ! do insertion sort:
+            do i = ilow + 1,ihigh
+                do j = i,ilow + 1,-1
+                    if ( lexical_lt(str(j),str(j-1),case_sensitive) ) then
+                        call swap(str(j),str(j-1))
+                    else
+                        exit
+                    end if
+                end do
+            end do
+
+        elseif ( ihigh-ilow>max_size_for_insertion_sort ) then
+
+            ! do the normal quicksort:
             call partition(ilow,ihigh,ipivot)
             call quicksort(ilow,ipivot - 1)
             call quicksort(ipivot + 1,ihigh)
+
         end if
 
         end subroutine quicksort

@@ -8,7 +8,7 @@
 
     implicit none
 
-    character(len=3),dimension(11) :: str
+    character(len=14),dimension(101) :: str
 
     write(*,*) ''
     write(*,*) '----Case Insensitive----'
@@ -16,14 +16,17 @@
     write(*,*) 'recursive:'
     call initialize()
     call lexical_sort_recursive(str,case_sensitive=.false.)
-    write(*,'(*(5X,A3/))') str
-    if (.not. list_is_sorted(str,case_sensitive=.false.)) error stop 'Error: list is not sorted.'
+    write(*,'(*(5X,A/))') str
+    if (.not. list_is_sorted(str,case_sensitive=.false.)) &
+            error stop 'Error: list is not sorted.'
 
     write(*,*) ''
     write(*,*) 'nonrecursive:'
     call initialize()
     call lexical_sort_nonrecursive(str,case_sensitive=.false.)
-    write(*,'(*(5X,A3/))') str
+    write(*,'(*(5X,A/))') str
+    if (.not. list_is_sorted(str,case_sensitive=.false.)) &
+            error stop 'Error: list is not sorted.'
 
     write(*,*) ''
     write(*,*) '----Case Sensitive----'
@@ -31,13 +34,17 @@
     write(*,*) 'recursive:'
     call initialize()
     call lexical_sort_recursive(str,case_sensitive=.true.)
-    write(*,'(*(5X,A3/))') str
+    write(*,'(*(5X,A/))') str
+    if (.not. list_is_sorted(str,case_sensitive=.true.)) &
+            error stop 'Error: list is not sorted.'
 
     write(*,*) ''
     write(*,*) 'nonrecursive:'
     call initialize()
     call lexical_sort_nonrecursive(str,case_sensitive=.true.)
-    write(*,'(*(5X,A3/))') str
+    write(*,'(*(5X,A/))') str
+    if (.not. list_is_sorted(str,case_sensitive=.true.)) &
+            error stop 'Error: list is not sorted.'
 
     write(*,*) ''
     write(*,*) 'tests...'
@@ -52,17 +59,109 @@
 
     implicit none
 
-        str(1)  = 'bbb'
-        str(2)  = 'Yyy'
-        str(3)  = 'cCc'
-        str(4)  = 'ooo'
-        str(5)  = 'aaa'
-        str(6)  = 'ppp'
-        str(7)  = 'qqq'
-        str(8)  = 'Ccc'
-        str(9)  = 'Xxx'
-        str(10) = 'vvv'
-        str(11) = 'aAa'
+        !random dictionary words
+
+        str = [ 'roll          ',&
+                'crash         ',&
+                'wind          ',&
+                'deafening     ',&
+                'decorate      ',&
+                'meddle        ',&
+                'Spray         ',&
+                'shrill        ',&
+                'hilarious     ',&
+                'present       ',&
+                'planes        ',&
+                'elastic       ',&
+                'massive       ',&
+                'tooth         ',&
+                'cry           ',&
+                'unwieldy      ',&
+                'apparatus     ',&
+                'relax         ',&
+                'uttermost     ',&
+                'loose         ',&
+                'questionable  ',&
+                'utopian       ',&
+                'fix           ',&
+                'challenge     ',&
+                'flashy        ',&
+                'amuck         ',&
+                'rule          ',&
+                'cattle        ',&
+                'reduce        ',&
+                'handsomely    ',&
+                'representative',&
+                'ratty         ',&
+                'curious       ',&
+                'strange       ',&
+                'daughter      ',&
+                'cup           ',&
+                'wrist         ',&
+                'party         ',&
+                'dreary        ',&
+                'bath          ',&
+                'arch          ',&
+                'mountainous   ',&
+                'whip          ',&
+                'paste         ',&
+                'exuberant     ',&
+                'enter         ',&
+                'irritate      ',&
+                'teeny-tiny    ',&
+                'telephone     ',&
+                'queue         ',&
+                'hope          ',&
+                'grubby        ',&
+                'thoughtless   ',&
+                'blot          ',&
+                'recess        ',&
+                'imperfect     ',&
+                'change        ',&
+                'shade         ',&
+                'slow          ',&
+                'oranges       ',&
+                'society       ',&
+                'fretful       ',&
+                'peel          ',&
+                'kindhearted   ',&
+                'grade         ',&
+                'island        ',&
+                'name          ',&
+                'seemly        ',&
+                'Premium       ',&
+                'poison        ',&
+                'hope          ',&
+                'grate         ',&
+                'few           ',&
+                'drop          ',&
+                'plastic       ',&
+                'sudden        ',&
+                'cooing        ',&
+                'confuse       ',&
+                'wealthy       ',&
+                'quirky        ',&
+                'reminiscent   ',&
+                'muddle        ',&
+                'decide        ',&
+                'wait          ',&
+                'railway       ',&
+                'yoke          ',&
+                'arrive        ',&
+                'loud          ',&
+                'rustic        ',&
+                'suit          ',&
+                'torpid        ',&
+                'level         ',&
+                'whole         ',&
+                'flow          ',&
+                'bore          ',&
+                'savory        ',&
+                'cheer         ',&
+                'rude          ',&
+                'upbeat        ',&
+                'drip          ',&
+                'basketball    ']
 
     end subroutine initialize
 
