@@ -301,7 +301,12 @@
     integer :: j
 
     j = index( uppercase_letters,c )
-    lcase = merge(lowercase_letters(j:j),c,j>0)
+
+    if (j>0) then
+        lcase = lowercase_letters(j:j)
+    else
+        lcase = c
+    end if
 
     end function lowercase_char
 !*****************************************************************************************
