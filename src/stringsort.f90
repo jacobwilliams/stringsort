@@ -788,7 +788,6 @@
 
     type(int_list),dimension(size(str)) :: ints !! the `str` converted into arrays of integers
     logical,dimension(size(str)) :: case_sensitive_vec !! for the elemental routine
-    integer,dimension(size(str)) :: idx !! index vector for sorting
     integer :: i !! counter
 
     sorted = .true.
