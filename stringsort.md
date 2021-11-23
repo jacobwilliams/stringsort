@@ -1,7 +1,7 @@
 project: stringsort
 project_dir: ./src
 output_dir: ./doc
-project_github: https://github.com/jacobwilliams/sorting
+project_github: https://github.com/jacobwilliams/stringsort
 summary: String Sorting Routines
 author: Jacob Williams
 github: https://github.com/jacobwilliams
