@@ -1,7 +1,9 @@
 
+![Build Status](https://github.com/jacobwilliams/stringsort/actions/workflows/CI.yml/badge.svg)
+
 ### Description
 
-Just some sorting routines for strings.
+Just some Fortran sorting routines for strings.
 
 ### Building
 
@@ -28,3 +30,7 @@ To generate the documentation using [ford](https://github.com/Fortran-FOSS-Progr
 ### License
 
 This code and related files and documentation are distributed under a permissive free software [license](https://github.com/jacobwilliams/stringsort/blob/master/LICENSE) (BSD-style).
+
+### See also
+
+  * [Natural Sorting](https://degenerateconic.com/natural-sorting.html) [degenerateconic.com]
