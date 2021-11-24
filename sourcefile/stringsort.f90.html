@@ -128,7 +128,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title="100.0% of total for source files.">454 statements</a>
+    title="100.0% of total for source files.">457 statements</a>
      </li> 
      
      
@@ -776,315 +776,318 @@
 <a id="ln-511" name="ln-511"></a>                <span class="c">! do insertion sort on str( start:endd )</span>
 <a id="ln-512" name="ln-512"></a>                <span class="n">insertion</span><span class="p">:</span> <span class="k">do </span><span class="n">i</span> <span class="o">=</span> <span class="n">start</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span><span class="n">endd</span>
 <a id="ln-513" name="ln-513"></a>                    <span class="k">do </span><span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="p">,</span><span class="n">start</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span>
-<a id="ln-514" name="ln-514"></a>                        <span class="k">if</span> <span class="p">(</span> <span class="n">lexical_ge</span><span class="p">(</span><span class="n">str</span><span class="p">(</span><span class="n">j</span><span class="p">),</span><span class="n">str</span><span class="p">(</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="n">case_sensitive</span><span class="p">)</span> <span class="p">)</span> <span class="k">cycle </span><span class="n">insertion</span>
-<a id="ln-515" name="ln-515"></a>                        <span class="n">dmnmx</span>   <span class="o">=</span> <span class="n">str</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
-<a id="ln-516" name="ln-516"></a>                        <span class="n">str</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>   <span class="o">=</span> <span class="n">str</span><span class="p">(</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-<a id="ln-517" name="ln-517"></a>                        <span class="n">str</span><span class="p">(</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">dmnmx</span>
-<a id="ln-518" name="ln-518"></a>                    <span class="k">end do</span>
-<a id="ln-519" name="ln-519"></a><span class="k">                end do </span><span class="n">insertion</span>
-<a id="ln-520" name="ln-520"></a>
-<a id="ln-521" name="ln-521"></a>            <span class="n">elseif</span> <span class="p">(</span> <span class="n">endd</span><span class="o">-</span><span class="n">start</span><span class="o">&gt;</span><span class="n">max_size_for_insertion_sort</span> <span class="p">)</span> <span class="k">then</span>
-<a id="ln-522" name="ln-522"></a>
-<a id="ln-523" name="ln-523"></a>                <span class="c">! partition str( start:endd ) and stack parts,largest one first</span>
-<a id="ln-524" name="ln-524"></a>                <span class="c">! choose partition entry as median of 3</span>
+<a id="ln-514" name="ln-514"></a>                        <span class="k">if</span> <span class="p">(</span> <span class="n">lexical_lt</span><span class="p">(</span><span class="n">str</span><span class="p">(</span><span class="n">j</span><span class="p">),</span><span class="n">str</span><span class="p">(</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="n">case_sensitive</span><span class="p">)</span> <span class="p">)</span> <span class="k">then</span>
+<a id="ln-515" name="ln-515"></a><span class="k">                            </span><span class="n">dmnmx</span>    <span class="o">=</span> <span class="n">str</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+<a id="ln-516" name="ln-516"></a>                            <span class="n">str</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>   <span class="o">=</span> <span class="n">str</span><span class="p">(</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<a id="ln-517" name="ln-517"></a>                            <span class="n">str</span><span class="p">(</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">dmnmx</span>
+<a id="ln-518" name="ln-518"></a>                        <span class="k">else</span>
+<a id="ln-519" name="ln-519"></a><span class="k">                            exit</span>
+<a id="ln-520" name="ln-520"></a><span class="k">                        end if</span>
+<a id="ln-521" name="ln-521"></a><span class="k">                    end do</span>
+<a id="ln-522" name="ln-522"></a><span class="k">                end do </span><span class="n">insertion</span>
+<a id="ln-523" name="ln-523"></a>
+<a id="ln-524" name="ln-524"></a>            <span class="n">elseif</span> <span class="p">(</span> <span class="n">endd</span><span class="o">-</span><span class="n">start</span><span class="o">&gt;</span><span class="n">max_size_for_insertion_sort</span> <span class="p">)</span> <span class="k">then</span>
 <a id="ln-525" name="ln-525"></a>
-<a id="ln-526" name="ln-526"></a>                <span class="n">d1</span> <span class="o">=</span> <span class="n">str</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
-<a id="ln-527" name="ln-527"></a>                <span class="n">d2</span> <span class="o">=</span> <span class="n">str</span><span class="p">(</span><span class="n">endd</span><span class="p">)</span>
-<a id="ln-528" name="ln-528"></a>                <span class="n">i</span>  <span class="o">=</span><span class="p">(</span><span class="n">start</span><span class="o">+</span><span class="n">endd</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
-<a id="ln-529" name="ln-529"></a>                <span class="n">d3</span> <span class="o">=</span> <span class="n">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-<a id="ln-530" name="ln-530"></a>                <span class="k">if</span> <span class="p">(</span> <span class="n">lexical_lt</span><span class="p">(</span><span class="n">d1</span><span class="p">,</span><span class="n">d2</span><span class="p">,</span><span class="n">case_sensitive</span><span class="p">)</span> <span class="p">)</span> <span class="k">then</span>
-<a id="ln-531" name="ln-531"></a><span class="k">                    if</span> <span class="p">(</span> <span class="n">lexical_lt</span><span class="p">(</span><span class="n">d3</span><span class="p">,</span><span class="n">d1</span><span class="p">,</span><span class="n">case_sensitive</span><span class="p">)</span> <span class="p">)</span> <span class="k">then</span>
-<a id="ln-532" name="ln-532"></a><span class="k">                        </span><span class="n">dmnmx</span> <span class="o">=</span> <span class="n">d1</span>
-<a id="ln-533" name="ln-533"></a>                    <span class="n">elseif</span> <span class="p">(</span> <span class="n">lexical_lt</span><span class="p">(</span><span class="n">d3</span><span class="p">,</span><span class="n">d2</span><span class="p">,</span><span class="n">case_sensitive</span><span class="p">)</span> <span class="p">)</span> <span class="k">then</span>
-<a id="ln-534" name="ln-534"></a><span class="k">                        </span><span class="n">dmnmx</span> <span class="o">=</span> <span class="n">d3</span>
-<a id="ln-535" name="ln-535"></a>                    <span class="k">else</span>
-<a id="ln-536" name="ln-536"></a><span class="k">                        </span><span class="n">dmnmx</span> <span class="o">=</span> <span class="n">d2</span>
-<a id="ln-537" name="ln-537"></a>                    <span class="k">endif</span>
-<a id="ln-538" name="ln-538"></a><span class="k">                </span><span class="n">elseif</span> <span class="p">(</span> <span class="n">lexical_lt</span><span class="p">(</span><span class="n">d3</span><span class="p">,</span><span class="n">d2</span><span class="p">,</span><span class="n">case_sensitive</span><span class="p">)</span> <span class="p">)</span> <span class="k">then</span>
-<a id="ln-539" name="ln-539"></a><span class="k">                    </span><span class="n">dmnmx</span> <span class="o">=</span> <span class="n">d2</span>
-<a id="ln-540" name="ln-540"></a>                <span class="n">elseif</span> <span class="p">(</span> <span class="n">lexical_lt</span><span class="p">(</span><span class="n">d3</span><span class="p">,</span><span class="n">d1</span><span class="p">,</span><span class="n">case_sensitive</span><span class="p">)</span> <span class="p">)</span> <span class="k">then</span>
-<a id="ln-541" name="ln-541"></a><span class="k">                    </span><span class="n">dmnmx</span> <span class="o">=</span> <span class="n">d3</span>
-<a id="ln-542" name="ln-542"></a>                <span class="k">else</span>
-<a id="ln-543" name="ln-543"></a><span class="k">                    </span><span class="n">dmnmx</span> <span class="o">=</span> <span class="n">d1</span>
-<a id="ln-544" name="ln-544"></a>                <span class="k">endif</span>
-<a id="ln-545" name="ln-545"></a>
-<a id="ln-546" name="ln-546"></a><span class="k">                </span><span class="n">i</span> <span class="o">=</span> <span class="n">start</span> <span class="o">-</span> <span class="mi">1</span>
-<a id="ln-547" name="ln-547"></a>                <span class="n">j</span> <span class="o">=</span> <span class="n">endd</span> <span class="o">+</span> <span class="mi">1</span>
-<a id="ln-548" name="ln-548"></a>                <span class="k">do</span>
-<a id="ln-549" name="ln-549"></a><span class="k">                    do</span>
-<a id="ln-550" name="ln-550"></a><span class="k">                        </span><span class="n">j</span> <span class="o">=</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span>
-<a id="ln-551" name="ln-551"></a>                        <span class="k">if</span> <span class="p">(</span> <span class="n">lexical_le</span><span class="p">(</span><span class="n">str</span><span class="p">(</span><span class="n">j</span><span class="p">),</span><span class="n">dmnmx</span><span class="p">,</span><span class="n">case_sensitive</span><span class="p">)</span> <span class="p">)</span> <span class="k">exit</span>
-<a id="ln-552" name="ln-552"></a><span class="k">                    end do</span>
-<a id="ln-553" name="ln-553"></a><span class="k">                    do</span>
-<a id="ln-554" name="ln-554"></a><span class="k">                        </span><span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
-<a id="ln-555" name="ln-555"></a>                        <span class="k">if</span> <span class="p">(</span> <span class="n">lexical_ge</span><span class="p">(</span><span class="n">str</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="n">dmnmx</span><span class="p">,</span><span class="n">case_sensitive</span><span class="p">)</span> <span class="p">)</span> <span class="k">exit</span>
-<a id="ln-556" name="ln-556"></a><span class="k">                    end do</span>
-<a id="ln-557" name="ln-557"></a><span class="k">                    if</span> <span class="p">(</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">j</span> <span class="p">)</span> <span class="k">then</span>
-<a id="ln-558" name="ln-558"></a><span class="k">                        </span><span class="n">tmp</span>   <span class="o">=</span> <span class="n">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-<a id="ln-559" name="ln-559"></a>                        <span class="n">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">=</span> <span class="n">str</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
-<a id="ln-560" name="ln-560"></a>                        <span class="n">str</span><span class="p">(</span><span class="n">j</span><span class="p">)</span> <span class="o">=</span> <span class="n">tmp</span>
-<a id="ln-561" name="ln-561"></a>                    <span class="k">else</span>
-<a id="ln-562" name="ln-562"></a><span class="k">                        exit</span>
-<a id="ln-563" name="ln-563"></a><span class="k">                    endif</span>
-<a id="ln-564" name="ln-564"></a><span class="k">                end do</span>
-<a id="ln-565" name="ln-565"></a><span class="k">                if</span> <span class="p">(</span> <span class="n">j</span><span class="o">-</span><span class="n">start</span><span class="o">&gt;</span><span class="n">endd</span><span class="o">-</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span> <span class="p">)</span> <span class="k">then</span>
-<a id="ln-566" name="ln-566"></a><span class="k">                    </span><span class="n">stkpnt</span>          <span class="o">=</span> <span class="n">stkpnt</span> <span class="o">+</span> <span class="mi">1</span>
-<a id="ln-567" name="ln-567"></a>                    <span class="n">stack</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">stkpnt</span><span class="p">)</span> <span class="o">=</span> <span class="n">start</span>
-<a id="ln-568" name="ln-568"></a>                    <span class="n">stack</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">stkpnt</span><span class="p">)</span> <span class="o">=</span> <span class="n">j</span>
-<a id="ln-569" name="ln-569"></a>                    <span class="n">stkpnt</span>          <span class="o">=</span> <span class="n">stkpnt</span> <span class="o">+</span> <span class="mi">1</span>
-<a id="ln-570" name="ln-570"></a>                    <span class="n">stack</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">stkpnt</span><span class="p">)</span> <span class="o">=</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span>
-<a id="ln-571" name="ln-571"></a>                    <span class="n">stack</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">stkpnt</span><span class="p">)</span> <span class="o">=</span> <span class="n">endd</span>
-<a id="ln-572" name="ln-572"></a>                <span class="k">else</span>
-<a id="ln-573" name="ln-573"></a><span class="k">                    </span><span class="n">stkpnt</span>          <span class="o">=</span> <span class="n">stkpnt</span> <span class="o">+</span> <span class="mi">1</span>
-<a id="ln-574" name="ln-574"></a>                    <span class="n">stack</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">stkpnt</span><span class="p">)</span> <span class="o">=</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span>
-<a id="ln-575" name="ln-575"></a>                    <span class="n">stack</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">stkpnt</span><span class="p">)</span> <span class="o">=</span> <span class="n">endd</span>
-<a id="ln-576" name="ln-576"></a>                    <span class="n">stkpnt</span>          <span class="o">=</span> <span class="n">stkpnt</span> <span class="o">+</span> <span class="mi">1</span>
-<a id="ln-577" name="ln-577"></a>                    <span class="n">stack</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">stkpnt</span><span class="p">)</span> <span class="o">=</span> <span class="n">start</span>
-<a id="ln-578" name="ln-578"></a>                    <span class="n">stack</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">stkpnt</span><span class="p">)</span> <span class="o">=</span> <span class="n">j</span>
-<a id="ln-579" name="ln-579"></a>                <span class="k">endif</span>
-<a id="ln-580" name="ln-580"></a>
-<a id="ln-581" name="ln-581"></a><span class="k">            endif</span>
-<a id="ln-582" name="ln-582"></a>
-<a id="ln-583" name="ln-583"></a><span class="k">            if</span> <span class="p">(</span> <span class="n">stkpnt</span><span class="o">&lt;=</span><span class="mi">0</span> <span class="p">)</span> <span class="k">exit</span>
-<a id="ln-584" name="ln-584"></a>
-<a id="ln-585" name="ln-585"></a><span class="k">        end do</span>
-<a id="ln-586" name="ln-586"></a>
-<a id="ln-587" name="ln-587"></a><span class="k">    end if</span>
-<a id="ln-588" name="ln-588"></a>
-<a id="ln-589" name="ln-589"></a><span class="k">    end subroutine </span><span class="n">lexical_sort_nonrecursive</span>
-<a id="ln-590" name="ln-590"></a><span class="c">!*****************************************************************************************</span>
+<a id="ln-526" name="ln-526"></a>                <span class="c">! partition str( start:endd ) and stack parts,largest one first</span>
+<a id="ln-527" name="ln-527"></a>                <span class="c">! choose partition entry as median of 3</span>
+<a id="ln-528" name="ln-528"></a>
+<a id="ln-529" name="ln-529"></a>                <span class="n">d1</span> <span class="o">=</span> <span class="n">str</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
+<a id="ln-530" name="ln-530"></a>                <span class="n">d2</span> <span class="o">=</span> <span class="n">str</span><span class="p">(</span><span class="n">endd</span><span class="p">)</span>
+<a id="ln-531" name="ln-531"></a>                <span class="n">i</span>  <span class="o">=</span><span class="p">(</span><span class="n">start</span><span class="o">+</span><span class="n">endd</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+<a id="ln-532" name="ln-532"></a>                <span class="n">d3</span> <span class="o">=</span> <span class="n">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<a id="ln-533" name="ln-533"></a>                <span class="k">if</span> <span class="p">(</span> <span class="n">lexical_lt</span><span class="p">(</span><span class="n">d1</span><span class="p">,</span><span class="n">d2</span><span class="p">,</span><span class="n">case_sensitive</span><span class="p">)</span> <span class="p">)</span> <span class="k">then</span>
+<a id="ln-534" name="ln-534"></a><span class="k">                    if</span> <span class="p">(</span> <span class="n">lexical_lt</span><span class="p">(</span><span class="n">d3</span><span class="p">,</span><span class="n">d1</span><span class="p">,</span><span class="n">case_sensitive</span><span class="p">)</span> <span class="p">)</span> <span class="k">then</span>
+<a id="ln-535" name="ln-535"></a><span class="k">                        </span><span class="n">dmnmx</span> <span class="o">=</span> <span class="n">d1</span>
+<a id="ln-536" name="ln-536"></a>                    <span class="n">elseif</span> <span class="p">(</span> <span class="n">lexical_lt</span><span class="p">(</span><span class="n">d3</span><span class="p">,</span><span class="n">d2</span><span class="p">,</span><span class="n">case_sensitive</span><span class="p">)</span> <span class="p">)</span> <span class="k">then</span>
+<a id="ln-537" name="ln-537"></a><span class="k">                        </span><span class="n">dmnmx</span> <span class="o">=</span> <span class="n">d3</span>
+<a id="ln-538" name="ln-538"></a>                    <span class="k">else</span>
+<a id="ln-539" name="ln-539"></a><span class="k">                        </span><span class="n">dmnmx</span> <span class="o">=</span> <span class="n">d2</span>
+<a id="ln-540" name="ln-540"></a>                    <span class="k">endif</span>
+<a id="ln-541" name="ln-541"></a><span class="k">                </span><span class="n">elseif</span> <span class="p">(</span> <span class="n">lexical_lt</span><span class="p">(</span><span class="n">d3</span><span class="p">,</span><span class="n">d2</span><span class="p">,</span><span class="n">case_sensitive</span><span class="p">)</span> <span class="p">)</span> <span class="k">then</span>
+<a id="ln-542" name="ln-542"></a><span class="k">                    </span><span class="n">dmnmx</span> <span class="o">=</span> <span class="n">d2</span>
+<a id="ln-543" name="ln-543"></a>                <span class="n">elseif</span> <span class="p">(</span> <span class="n">lexical_lt</span><span class="p">(</span><span class="n">d3</span><span class="p">,</span><span class="n">d1</span><span class="p">,</span><span class="n">case_sensitive</span><span class="p">)</span> <span class="p">)</span> <span class="k">then</span>
+<a id="ln-544" name="ln-544"></a><span class="k">                    </span><span class="n">dmnmx</span> <span class="o">=</span> <span class="n">d3</span>
+<a id="ln-545" name="ln-545"></a>                <span class="k">else</span>
+<a id="ln-546" name="ln-546"></a><span class="k">                    </span><span class="n">dmnmx</span> <span class="o">=</span> <span class="n">d1</span>
+<a id="ln-547" name="ln-547"></a>                <span class="k">endif</span>
+<a id="ln-548" name="ln-548"></a>
+<a id="ln-549" name="ln-549"></a><span class="k">                </span><span class="n">i</span> <span class="o">=</span> <span class="n">start</span> <span class="o">-</span> <span class="mi">1</span>
+<a id="ln-550" name="ln-550"></a>                <span class="n">j</span> <span class="o">=</span> <span class="n">endd</span> <span class="o">+</span> <span class="mi">1</span>
+<a id="ln-551" name="ln-551"></a>                <span class="k">do</span>
+<a id="ln-552" name="ln-552"></a><span class="k">                    do</span>
+<a id="ln-553" name="ln-553"></a><span class="k">                        </span><span class="n">j</span> <span class="o">=</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span>
+<a id="ln-554" name="ln-554"></a>                        <span class="k">if</span> <span class="p">(</span> <span class="n">lexical_le</span><span class="p">(</span><span class="n">str</span><span class="p">(</span><span class="n">j</span><span class="p">),</span><span class="n">dmnmx</span><span class="p">,</span><span class="n">case_sensitive</span><span class="p">)</span> <span class="p">)</span> <span class="k">exit</span>
+<a id="ln-555" name="ln-555"></a><span class="k">                    end do</span>
+<a id="ln-556" name="ln-556"></a><span class="k">                    do</span>
+<a id="ln-557" name="ln-557"></a><span class="k">                        </span><span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+<a id="ln-558" name="ln-558"></a>                        <span class="k">if</span> <span class="p">(</span> <span class="n">lexical_ge</span><span class="p">(</span><span class="n">str</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="n">dmnmx</span><span class="p">,</span><span class="n">case_sensitive</span><span class="p">)</span> <span class="p">)</span> <span class="k">exit</span>
+<a id="ln-559" name="ln-559"></a><span class="k">                    end do</span>
+<a id="ln-560" name="ln-560"></a><span class="k">                    if</span> <span class="p">(</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">j</span> <span class="p">)</span> <span class="k">then</span>
+<a id="ln-561" name="ln-561"></a><span class="k">                        </span><span class="n">tmp</span>   <span class="o">=</span> <span class="n">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<a id="ln-562" name="ln-562"></a>                        <span class="n">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">=</span> <span class="n">str</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+<a id="ln-563" name="ln-563"></a>                        <span class="n">str</span><span class="p">(</span><span class="n">j</span><span class="p">)</span> <span class="o">=</span> <span class="n">tmp</span>
+<a id="ln-564" name="ln-564"></a>                    <span class="k">else</span>
+<a id="ln-565" name="ln-565"></a><span class="k">                        exit</span>
+<a id="ln-566" name="ln-566"></a><span class="k">                    endif</span>
+<a id="ln-567" name="ln-567"></a><span class="k">                end do</span>
+<a id="ln-568" name="ln-568"></a><span class="k">                if</span> <span class="p">(</span> <span class="n">j</span><span class="o">-</span><span class="n">start</span><span class="o">&gt;</span><span class="n">endd</span><span class="o">-</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span> <span class="p">)</span> <span class="k">then</span>
+<a id="ln-569" name="ln-569"></a><span class="k">                    </span><span class="n">stkpnt</span>          <span class="o">=</span> <span class="n">stkpnt</span> <span class="o">+</span> <span class="mi">1</span>
+<a id="ln-570" name="ln-570"></a>                    <span class="n">stack</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">stkpnt</span><span class="p">)</span> <span class="o">=</span> <span class="n">start</span>
+<a id="ln-571" name="ln-571"></a>                    <span class="n">stack</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">stkpnt</span><span class="p">)</span> <span class="o">=</span> <span class="n">j</span>
+<a id="ln-572" name="ln-572"></a>                    <span class="n">stkpnt</span>          <span class="o">=</span> <span class="n">stkpnt</span> <span class="o">+</span> <span class="mi">1</span>
+<a id="ln-573" name="ln-573"></a>                    <span class="n">stack</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">stkpnt</span><span class="p">)</span> <span class="o">=</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span>
+<a id="ln-574" name="ln-574"></a>                    <span class="n">stack</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">stkpnt</span><span class="p">)</span> <span class="o">=</span> <span class="n">endd</span>
+<a id="ln-575" name="ln-575"></a>                <span class="k">else</span>
+<a id="ln-576" name="ln-576"></a><span class="k">                    </span><span class="n">stkpnt</span>          <span class="o">=</span> <span class="n">stkpnt</span> <span class="o">+</span> <span class="mi">1</span>
+<a id="ln-577" name="ln-577"></a>                    <span class="n">stack</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">stkpnt</span><span class="p">)</span> <span class="o">=</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span>
+<a id="ln-578" name="ln-578"></a>                    <span class="n">stack</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">stkpnt</span><span class="p">)</span> <span class="o">=</span> <span class="n">endd</span>
+<a id="ln-579" name="ln-579"></a>                    <span class="n">stkpnt</span>          <span class="o">=</span> <span class="n">stkpnt</span> <span class="o">+</span> <span class="mi">1</span>
+<a id="ln-580" name="ln-580"></a>                    <span class="n">stack</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">stkpnt</span><span class="p">)</span> <span class="o">=</span> <span class="n">start</span>
+<a id="ln-581" name="ln-581"></a>                    <span class="n">stack</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">stkpnt</span><span class="p">)</span> <span class="o">=</span> <span class="n">j</span>
+<a id="ln-582" name="ln-582"></a>                <span class="k">endif</span>
+<a id="ln-583" name="ln-583"></a>
+<a id="ln-584" name="ln-584"></a><span class="k">            endif</span>
+<a id="ln-585" name="ln-585"></a>
+<a id="ln-586" name="ln-586"></a><span class="k">            if</span> <span class="p">(</span> <span class="n">stkpnt</span><span class="o">&lt;=</span><span class="mi">0</span> <span class="p">)</span> <span class="k">exit</span>
+<a id="ln-587" name="ln-587"></a>
+<a id="ln-588" name="ln-588"></a><span class="k">        end do</span>
+<a id="ln-589" name="ln-589"></a>
+<a id="ln-590" name="ln-590"></a><span class="k">    end if</span>
 <a id="ln-591" name="ln-591"></a>
-<a id="ln-592" name="ln-592"></a><span class="c">!*****************************************************************************************</span>
-<a id="ln-593" name="ln-593"></a><span class="c">!&gt;</span>
-<a id="ln-594" name="ln-594"></a><span class="c">!  Sorts a character array `str` in increasing order.</span>
-<a id="ln-595" name="ln-595"></a><span class="c">!  Uses a basic recursive quicksort</span>
-<a id="ln-596" name="ln-596"></a><span class="c">!  (with insertion sort for partitions with &lt;= 20 elements).</span>
-<a id="ln-597" name="ln-597"></a>
-<a id="ln-598" name="ln-598"></a>    <span class="k">subroutine </span><span class="n">lexical_sort_recursive</span><span class="p">(</span><span class="n">str</span><span class="p">,</span><span class="n">case_sensitive</span><span class="p">)</span>
-<a id="ln-599" name="ln-599"></a>
-<a id="ln-600" name="ln-600"></a>    <span class="k">implicit none</span>
-<a id="ln-601" name="ln-601"></a>
-<a id="ln-602" name="ln-602"></a><span class="k">    </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span> <span class="kd">::</span> <span class="n">str</span>
-<a id="ln-603" name="ln-603"></a>    <span class="kt">logical</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">case_sensitive</span> <span class="c">!! if true, the sort is case sensitive</span>
+<a id="ln-592" name="ln-592"></a><span class="k">    end subroutine </span><span class="n">lexical_sort_nonrecursive</span>
+<a id="ln-593" name="ln-593"></a><span class="c">!*****************************************************************************************</span>
+<a id="ln-594" name="ln-594"></a>
+<a id="ln-595" name="ln-595"></a><span class="c">!*****************************************************************************************</span>
+<a id="ln-596" name="ln-596"></a><span class="c">!&gt;</span>
+<a id="ln-597" name="ln-597"></a><span class="c">!  Sorts a character array `str` in increasing order.</span>
+<a id="ln-598" name="ln-598"></a><span class="c">!  Uses a basic recursive quicksort</span>
+<a id="ln-599" name="ln-599"></a><span class="c">!  (with insertion sort for partitions with &lt;= 20 elements).</span>
+<a id="ln-600" name="ln-600"></a>
+<a id="ln-601" name="ln-601"></a>    <span class="k">subroutine </span><span class="n">lexical_sort_recursive</span><span class="p">(</span><span class="n">str</span><span class="p">,</span><span class="n">case_sensitive</span><span class="p">)</span>
+<a id="ln-602" name="ln-602"></a>
+<a id="ln-603" name="ln-603"></a>    <span class="k">implicit none</span>
 <a id="ln-604" name="ln-604"></a>
-<a id="ln-605" name="ln-605"></a>    <span class="k">call </span><span class="n">quicksort</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">str</span><span class="p">))</span>
-<a id="ln-606" name="ln-606"></a>
-<a id="ln-607" name="ln-607"></a>    <span class="k">contains</span>
-<a id="ln-608" name="ln-608"></a>
-<a id="ln-609" name="ln-609"></a>    <span class="c">!***************************************************************</span>
-<a id="ln-610" name="ln-610"></a>    <span class="c">!&gt;</span>
-<a id="ln-611" name="ln-611"></a>    <span class="c">!  Sort the array, based on the lexical string comparison.</span>
-<a id="ln-612" name="ln-612"></a>
-<a id="ln-613" name="ln-613"></a>        <span class="k">recursive subroutine </span><span class="n">quicksort</span><span class="p">(</span><span class="n">ilow</span><span class="p">,</span><span class="n">ihigh</span><span class="p">)</span>
-<a id="ln-614" name="ln-614"></a>
-<a id="ln-615" name="ln-615"></a>        <span class="k">implicit none</span>
-<a id="ln-616" name="ln-616"></a>
-<a id="ln-617" name="ln-617"></a><span class="k">        </span><span class="kt">integer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">ilow</span>
-<a id="ln-618" name="ln-618"></a>        <span class="kt">integer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">ihigh</span>
+<a id="ln-605" name="ln-605"></a><span class="k">    </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span> <span class="kd">::</span> <span class="n">str</span>
+<a id="ln-606" name="ln-606"></a>    <span class="kt">logical</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">case_sensitive</span> <span class="c">!! if true, the sort is case sensitive</span>
+<a id="ln-607" name="ln-607"></a>
+<a id="ln-608" name="ln-608"></a>    <span class="k">call </span><span class="n">quicksort</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">str</span><span class="p">))</span>
+<a id="ln-609" name="ln-609"></a>
+<a id="ln-610" name="ln-610"></a>    <span class="k">contains</span>
+<a id="ln-611" name="ln-611"></a>
+<a id="ln-612" name="ln-612"></a>    <span class="c">!***************************************************************</span>
+<a id="ln-613" name="ln-613"></a>    <span class="c">!&gt;</span>
+<a id="ln-614" name="ln-614"></a>    <span class="c">!  Sort the array, based on the lexical string comparison.</span>
+<a id="ln-615" name="ln-615"></a>
+<a id="ln-616" name="ln-616"></a>        <span class="k">recursive subroutine </span><span class="n">quicksort</span><span class="p">(</span><span class="n">ilow</span><span class="p">,</span><span class="n">ihigh</span><span class="p">)</span>
+<a id="ln-617" name="ln-617"></a>
+<a id="ln-618" name="ln-618"></a>        <span class="k">implicit none</span>
 <a id="ln-619" name="ln-619"></a>
-<a id="ln-620" name="ln-620"></a>        <span class="kt">integer</span> <span class="kd">::</span> <span class="n">ipivot</span> <span class="c">!! pivot element</span>
-<a id="ln-621" name="ln-621"></a>        <span class="kt">integer</span> <span class="kd">::</span> <span class="n">i</span>      <span class="c">!! counter</span>
-<a id="ln-622" name="ln-622"></a>        <span class="kt">integer</span> <span class="kd">::</span> <span class="n">j</span>      <span class="c">!! counter</span>
-<a id="ln-623" name="ln-623"></a>
-<a id="ln-624" name="ln-624"></a>        <span class="k">if</span> <span class="p">(</span> <span class="n">ihigh</span><span class="o">-</span><span class="n">ilow</span><span class="o">&lt;=</span><span class="n">max_size_for_insertion_sort</span> <span class="p">.</span><span class="nb">and</span><span class="p">.</span> <span class="n">ihigh</span><span class="o">&gt;</span><span class="n">ilow</span> <span class="p">)</span> <span class="k">then</span>
-<a id="ln-625" name="ln-625"></a>
-<a id="ln-626" name="ln-626"></a>            <span class="c">! do insertion sort:</span>
-<a id="ln-627" name="ln-627"></a>            <span class="k">do </span><span class="n">i</span> <span class="o">=</span> <span class="n">ilow</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span><span class="n">ihigh</span>
-<a id="ln-628" name="ln-628"></a>                <span class="k">do </span><span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="p">,</span><span class="n">ilow</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span>
-<a id="ln-629" name="ln-629"></a>                    <span class="k">if</span> <span class="p">(</span> <span class="n">lexical_lt</span><span class="p">(</span><span class="n">str</span><span class="p">(</span><span class="n">j</span><span class="p">),</span><span class="n">str</span><span class="p">(</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="n">case_sensitive</span><span class="p">)</span> <span class="p">)</span> <span class="k">then</span>
-<a id="ln-630" name="ln-630"></a><span class="k">                        call </span><span class="n">swap</span><span class="p">(</span><span class="n">str</span><span class="p">(</span><span class="n">j</span><span class="p">),</span><span class="n">str</span><span class="p">(</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
-<a id="ln-631" name="ln-631"></a>                    <span class="k">else</span>
-<a id="ln-632" name="ln-632"></a><span class="k">                        exit</span>
-<a id="ln-633" name="ln-633"></a><span class="k">                    end if</span>
-<a id="ln-634" name="ln-634"></a><span class="k">                end do</span>
-<a id="ln-635" name="ln-635"></a><span class="k">            end do</span>
-<a id="ln-636" name="ln-636"></a>
-<a id="ln-637" name="ln-637"></a><span class="k">        </span><span class="n">elseif</span> <span class="p">(</span> <span class="n">ihigh</span><span class="o">-</span><span class="n">ilow</span><span class="o">&gt;</span><span class="n">max_size_for_insertion_sort</span> <span class="p">)</span> <span class="k">then</span>
-<a id="ln-638" name="ln-638"></a>
-<a id="ln-639" name="ln-639"></a>            <span class="c">! do the normal quicksort:</span>
-<a id="ln-640" name="ln-640"></a>            <span class="k">call </span><span class="n">partition</span><span class="p">(</span><span class="n">ilow</span><span class="p">,</span><span class="n">ihigh</span><span class="p">,</span><span class="n">ipivot</span><span class="p">)</span>
-<a id="ln-641" name="ln-641"></a>            <span class="k">call </span><span class="n">quicksort</span><span class="p">(</span><span class="n">ilow</span><span class="p">,</span><span class="n">ipivot</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-<a id="ln-642" name="ln-642"></a>            <span class="k">call </span><span class="n">quicksort</span><span class="p">(</span><span class="n">ipivot</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span><span class="n">ihigh</span><span class="p">)</span>
-<a id="ln-643" name="ln-643"></a>
-<a id="ln-644" name="ln-644"></a>        <span class="k">end if</span>
-<a id="ln-645" name="ln-645"></a>
-<a id="ln-646" name="ln-646"></a><span class="k">        end subroutine </span><span class="n">quicksort</span>
-<a id="ln-647" name="ln-647"></a>
-<a id="ln-648" name="ln-648"></a>    <span class="c">!***************************************************************</span>
-<a id="ln-649" name="ln-649"></a>    <span class="c">!&gt;</span>
-<a id="ln-650" name="ln-650"></a>    <span class="c">!  Partition the array, based on the lexical string comparison.</span>
-<a id="ln-651" name="ln-651"></a>
-<a id="ln-652" name="ln-652"></a>        <span class="k">subroutine </span><span class="n">partition</span><span class="p">(</span><span class="n">ilow</span><span class="p">,</span><span class="n">ihigh</span><span class="p">,</span><span class="n">ipivot</span><span class="p">)</span>
-<a id="ln-653" name="ln-653"></a>
-<a id="ln-654" name="ln-654"></a>        <span class="k">implicit none</span>
-<a id="ln-655" name="ln-655"></a>
-<a id="ln-656" name="ln-656"></a><span class="k">        </span><span class="kt">integer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">ilow</span>
-<a id="ln-657" name="ln-657"></a>        <span class="kt">integer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">ihigh</span>
-<a id="ln-658" name="ln-658"></a>        <span class="kt">integer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span> <span class="kd">::</span> <span class="n">ipivot</span>
-<a id="ln-659" name="ln-659"></a>
-<a id="ln-660" name="ln-660"></a>        <span class="kt">integer</span> <span class="kd">::</span> <span class="n">i</span><span class="p">,</span><span class="n">ip</span>
-<a id="ln-661" name="ln-661"></a>
-<a id="ln-662" name="ln-662"></a>        <span class="k">call </span><span class="n">swap</span><span class="p">(</span><span class="n">str</span><span class="p">(</span><span class="n">ilow</span><span class="p">),</span><span class="n">str</span><span class="p">((</span><span class="n">ilow</span><span class="o">+</span><span class="n">ihigh</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
-<a id="ln-663" name="ln-663"></a>        <span class="n">ip</span> <span class="o">=</span> <span class="n">ilow</span>
-<a id="ln-664" name="ln-664"></a>        <span class="k">do </span><span class="n">i</span> <span class="o">=</span> <span class="n">ilow</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">ihigh</span>
-<a id="ln-665" name="ln-665"></a>            <span class="k">if</span> <span class="p">(</span><span class="n">lexical_lt</span><span class="p">(</span><span class="n">str</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="n">str</span><span class="p">(</span><span class="n">ilow</span><span class="p">),</span><span class="n">case_sensitive</span><span class="p">))</span> <span class="k">then</span>
-<a id="ln-666" name="ln-666"></a><span class="k">                </span><span class="n">ip</span> <span class="o">=</span> <span class="n">ip</span> <span class="o">+</span> <span class="mi">1</span>
-<a id="ln-667" name="ln-667"></a>                <span class="k">call </span><span class="n">swap</span><span class="p">(</span><span class="n">str</span><span class="p">(</span><span class="n">ip</span><span class="p">),</span><span class="n">str</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
-<a id="ln-668" name="ln-668"></a>            <span class="k">end if</span>
-<a id="ln-669" name="ln-669"></a><span class="k">        end do</span>
-<a id="ln-670" name="ln-670"></a><span class="k">        call </span><span class="n">swap</span><span class="p">(</span><span class="n">str</span><span class="p">(</span><span class="n">ilow</span><span class="p">),</span><span class="n">str</span><span class="p">(</span><span class="n">ip</span><span class="p">))</span>
-<a id="ln-671" name="ln-671"></a>        <span class="n">ipivot</span> <span class="o">=</span> <span class="n">ip</span>
-<a id="ln-672" name="ln-672"></a>
-<a id="ln-673" name="ln-673"></a>        <span class="k">end subroutine </span><span class="n">partition</span>
-<a id="ln-674" name="ln-674"></a>
-<a id="ln-675" name="ln-675"></a>    <span class="k">end subroutine </span><span class="n">lexical_sort_recursive</span>
-<a id="ln-676" name="ln-676"></a><span class="c">!*****************************************************************************************</span>
+<a id="ln-620" name="ln-620"></a><span class="k">        </span><span class="kt">integer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">ilow</span>
+<a id="ln-621" name="ln-621"></a>        <span class="kt">integer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">ihigh</span>
+<a id="ln-622" name="ln-622"></a>
+<a id="ln-623" name="ln-623"></a>        <span class="kt">integer</span> <span class="kd">::</span> <span class="n">ipivot</span> <span class="c">!! pivot element</span>
+<a id="ln-624" name="ln-624"></a>        <span class="kt">integer</span> <span class="kd">::</span> <span class="n">i</span>      <span class="c">!! counter</span>
+<a id="ln-625" name="ln-625"></a>        <span class="kt">integer</span> <span class="kd">::</span> <span class="n">j</span>      <span class="c">!! counter</span>
+<a id="ln-626" name="ln-626"></a>
+<a id="ln-627" name="ln-627"></a>        <span class="k">if</span> <span class="p">(</span> <span class="n">ihigh</span><span class="o">-</span><span class="n">ilow</span><span class="o">&lt;=</span><span class="n">max_size_for_insertion_sort</span> <span class="p">.</span><span class="nb">and</span><span class="p">.</span> <span class="n">ihigh</span><span class="o">&gt;</span><span class="n">ilow</span> <span class="p">)</span> <span class="k">then</span>
+<a id="ln-628" name="ln-628"></a>
+<a id="ln-629" name="ln-629"></a>            <span class="c">! do insertion sort:</span>
+<a id="ln-630" name="ln-630"></a>            <span class="k">do </span><span class="n">i</span> <span class="o">=</span> <span class="n">ilow</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span><span class="n">ihigh</span>
+<a id="ln-631" name="ln-631"></a>                <span class="k">do </span><span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="p">,</span><span class="n">ilow</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span>
+<a id="ln-632" name="ln-632"></a>                    <span class="k">if</span> <span class="p">(</span> <span class="n">lexical_lt</span><span class="p">(</span><span class="n">str</span><span class="p">(</span><span class="n">j</span><span class="p">),</span><span class="n">str</span><span class="p">(</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="n">case_sensitive</span><span class="p">)</span> <span class="p">)</span> <span class="k">then</span>
+<a id="ln-633" name="ln-633"></a><span class="k">                        call </span><span class="n">swap</span><span class="p">(</span><span class="n">str</span><span class="p">(</span><span class="n">j</span><span class="p">),</span><span class="n">str</span><span class="p">(</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+<a id="ln-634" name="ln-634"></a>                    <span class="k">else</span>
+<a id="ln-635" name="ln-635"></a><span class="k">                        exit</span>
+<a id="ln-636" name="ln-636"></a><span class="k">                    end if</span>
+<a id="ln-637" name="ln-637"></a><span class="k">                end do</span>
+<a id="ln-638" name="ln-638"></a><span class="k">            end do</span>
+<a id="ln-639" name="ln-639"></a>
+<a id="ln-640" name="ln-640"></a><span class="k">        </span><span class="n">elseif</span> <span class="p">(</span> <span class="n">ihigh</span><span class="o">-</span><span class="n">ilow</span><span class="o">&gt;</span><span class="n">max_size_for_insertion_sort</span> <span class="p">)</span> <span class="k">then</span>
+<a id="ln-641" name="ln-641"></a>
+<a id="ln-642" name="ln-642"></a>            <span class="c">! do the normal quicksort:</span>
+<a id="ln-643" name="ln-643"></a>            <span class="k">call </span><span class="n">partition</span><span class="p">(</span><span class="n">ilow</span><span class="p">,</span><span class="n">ihigh</span><span class="p">,</span><span class="n">ipivot</span><span class="p">)</span>
+<a id="ln-644" name="ln-644"></a>            <span class="k">call </span><span class="n">quicksort</span><span class="p">(</span><span class="n">ilow</span><span class="p">,</span><span class="n">ipivot</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<a id="ln-645" name="ln-645"></a>            <span class="k">call </span><span class="n">quicksort</span><span class="p">(</span><span class="n">ipivot</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span><span class="n">ihigh</span><span class="p">)</span>
+<a id="ln-646" name="ln-646"></a>
+<a id="ln-647" name="ln-647"></a>        <span class="k">end if</span>
+<a id="ln-648" name="ln-648"></a>
+<a id="ln-649" name="ln-649"></a><span class="k">        end subroutine </span><span class="n">quicksort</span>
+<a id="ln-650" name="ln-650"></a>
+<a id="ln-651" name="ln-651"></a>    <span class="c">!***************************************************************</span>
+<a id="ln-652" name="ln-652"></a>    <span class="c">!&gt;</span>
+<a id="ln-653" name="ln-653"></a>    <span class="c">!  Partition the array, based on the lexical string comparison.</span>
+<a id="ln-654" name="ln-654"></a>
+<a id="ln-655" name="ln-655"></a>        <span class="k">subroutine </span><span class="n">partition</span><span class="p">(</span><span class="n">ilow</span><span class="p">,</span><span class="n">ihigh</span><span class="p">,</span><span class="n">ipivot</span><span class="p">)</span>
+<a id="ln-656" name="ln-656"></a>
+<a id="ln-657" name="ln-657"></a>        <span class="k">implicit none</span>
+<a id="ln-658" name="ln-658"></a>
+<a id="ln-659" name="ln-659"></a><span class="k">        </span><span class="kt">integer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">ilow</span>
+<a id="ln-660" name="ln-660"></a>        <span class="kt">integer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">ihigh</span>
+<a id="ln-661" name="ln-661"></a>        <span class="kt">integer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span> <span class="kd">::</span> <span class="n">ipivot</span>
+<a id="ln-662" name="ln-662"></a>
+<a id="ln-663" name="ln-663"></a>        <span class="kt">integer</span> <span class="kd">::</span> <span class="n">i</span><span class="p">,</span><span class="n">ip</span>
+<a id="ln-664" name="ln-664"></a>
+<a id="ln-665" name="ln-665"></a>        <span class="k">call </span><span class="n">swap</span><span class="p">(</span><span class="n">str</span><span class="p">(</span><span class="n">ilow</span><span class="p">),</span><span class="n">str</span><span class="p">((</span><span class="n">ilow</span><span class="o">+</span><span class="n">ihigh</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+<a id="ln-666" name="ln-666"></a>        <span class="n">ip</span> <span class="o">=</span> <span class="n">ilow</span>
+<a id="ln-667" name="ln-667"></a>        <span class="k">do </span><span class="n">i</span> <span class="o">=</span> <span class="n">ilow</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">ihigh</span>
+<a id="ln-668" name="ln-668"></a>            <span class="k">if</span> <span class="p">(</span><span class="n">lexical_lt</span><span class="p">(</span><span class="n">str</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="n">str</span><span class="p">(</span><span class="n">ilow</span><span class="p">),</span><span class="n">case_sensitive</span><span class="p">))</span> <span class="k">then</span>
+<a id="ln-669" name="ln-669"></a><span class="k">                </span><span class="n">ip</span> <span class="o">=</span> <span class="n">ip</span> <span class="o">+</span> <span class="mi">1</span>
+<a id="ln-670" name="ln-670"></a>                <span class="k">call </span><span class="n">swap</span><span class="p">(</span><span class="n">str</span><span class="p">(</span><span class="n">ip</span><span class="p">),</span><span class="n">str</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+<a id="ln-671" name="ln-671"></a>            <span class="k">end if</span>
+<a id="ln-672" name="ln-672"></a><span class="k">        end do</span>
+<a id="ln-673" name="ln-673"></a><span class="k">        call </span><span class="n">swap</span><span class="p">(</span><span class="n">str</span><span class="p">(</span><span class="n">ilow</span><span class="p">),</span><span class="n">str</span><span class="p">(</span><span class="n">ip</span><span class="p">))</span>
+<a id="ln-674" name="ln-674"></a>        <span class="n">ipivot</span> <span class="o">=</span> <span class="n">ip</span>
+<a id="ln-675" name="ln-675"></a>
+<a id="ln-676" name="ln-676"></a>        <span class="k">end subroutine </span><span class="n">partition</span>
 <a id="ln-677" name="ln-677"></a>
-<a id="ln-678" name="ln-678"></a><span class="c">!*****************************************************************************************</span>
-<a id="ln-679" name="ln-679"></a><span class="c">!&gt;</span>
-<a id="ln-680" name="ln-680"></a><span class="c">!  Sorts a character array `str` in increasing order,</span>
-<a id="ln-681" name="ln-681"></a><span class="c">!  using a &quot;natural&quot; sorting method.</span>
-<a id="ln-682" name="ln-682"></a><span class="c">!</span>
-<a id="ln-683" name="ln-683"></a><span class="c">!  Uses a basic recursive quicksort</span>
-<a id="ln-684" name="ln-684"></a><span class="c">!  (with insertion sort for partitions with &lt;= 20 elements).</span>
-<a id="ln-685" name="ln-685"></a>
-<a id="ln-686" name="ln-686"></a>    <span class="k">subroutine </span><span class="n">lexical_sort_natural_recursive</span><span class="p">(</span><span class="n">str</span><span class="p">,</span><span class="n">case_sensitive</span><span class="p">)</span>
-<a id="ln-687" name="ln-687"></a>
-<a id="ln-688" name="ln-688"></a>    <span class="k">implicit none</span>
-<a id="ln-689" name="ln-689"></a>
-<a id="ln-690" name="ln-690"></a><span class="k">    </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span> <span class="kd">::</span> <span class="n">str</span>
-<a id="ln-691" name="ln-691"></a>    <span class="kt">logical</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">case_sensitive</span> <span class="c">!! if true, the sort is case sensitive</span>
+<a id="ln-678" name="ln-678"></a>    <span class="k">end subroutine </span><span class="n">lexical_sort_recursive</span>
+<a id="ln-679" name="ln-679"></a><span class="c">!*****************************************************************************************</span>
+<a id="ln-680" name="ln-680"></a>
+<a id="ln-681" name="ln-681"></a><span class="c">!*****************************************************************************************</span>
+<a id="ln-682" name="ln-682"></a><span class="c">!&gt;</span>
+<a id="ln-683" name="ln-683"></a><span class="c">!  Sorts a character array `str` in increasing order,</span>
+<a id="ln-684" name="ln-684"></a><span class="c">!  using a &quot;natural&quot; sorting method.</span>
+<a id="ln-685" name="ln-685"></a><span class="c">!</span>
+<a id="ln-686" name="ln-686"></a><span class="c">!  Uses a basic recursive quicksort</span>
+<a id="ln-687" name="ln-687"></a><span class="c">!  (with insertion sort for partitions with &lt;= 20 elements).</span>
+<a id="ln-688" name="ln-688"></a>
+<a id="ln-689" name="ln-689"></a>    <span class="k">subroutine </span><span class="n">lexical_sort_natural_recursive</span><span class="p">(</span><span class="n">str</span><span class="p">,</span><span class="n">case_sensitive</span><span class="p">)</span>
+<a id="ln-690" name="ln-690"></a>
+<a id="ln-691" name="ln-691"></a>    <span class="k">implicit none</span>
 <a id="ln-692" name="ln-692"></a>
-<a id="ln-693" name="ln-693"></a>    <span class="k">type</span><span class="p">(</span><span class="n">int_list</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="n">size</span><span class="p">(</span><span class="n">str</span><span class="p">))</span> <span class="kd">::</span> <span class="n">ints</span> <span class="c">!! the `str` converted into arrays of integers</span>
-<a id="ln-694" name="ln-694"></a>    <span class="kt">logical</span><span class="p">,</span><span class="k">dimension</span><span class="p">(</span><span class="n">size</span><span class="p">(</span><span class="n">str</span><span class="p">))</span> <span class="kd">::</span> <span class="n">case_sensitive_vec</span> <span class="c">!! for the elemental routine</span>
-<a id="ln-695" name="ln-695"></a>    <span class="kt">integer</span><span class="p">,</span><span class="k">dimension</span><span class="p">(</span><span class="n">size</span><span class="p">(</span><span class="n">str</span><span class="p">))</span> <span class="kd">::</span> <span class="n">idx</span> <span class="c">!! index vector for sorting</span>
-<a id="ln-696" name="ln-696"></a>    <span class="kt">integer</span> <span class="kd">::</span> <span class="n">i</span> <span class="c">!! counter</span>
-<a id="ln-697" name="ln-697"></a>
-<a id="ln-698" name="ln-698"></a>    <span class="c">!convert vector of strings to vector of int vectors:</span>
-<a id="ln-699" name="ln-699"></a>    <span class="n">case_sensitive_vec</span> <span class="o">=</span> <span class="n">case_sensitive</span>
-<a id="ln-700" name="ln-700"></a>    <span class="k">call </span><span class="n">string_to_int_list</span><span class="p">(</span><span class="n">str</span><span class="p">,</span><span class="n">case_sensitive_vec</span><span class="p">,</span><span class="n">ints</span><span class="p">)</span>
-<a id="ln-701" name="ln-701"></a>
-<a id="ln-702" name="ln-702"></a>    <span class="n">idx</span> <span class="o">=</span> <span class="p">[(</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">str</span><span class="p">))]</span>
-<a id="ln-703" name="ln-703"></a>    <span class="k">call </span><span class="n">quicksort</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">str</span><span class="p">))</span>
-<a id="ln-704" name="ln-704"></a>    <span class="n">str</span> <span class="o">=</span> <span class="n">str</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
-<a id="ln-705" name="ln-705"></a>
-<a id="ln-706" name="ln-706"></a>    <span class="k">contains</span>
-<a id="ln-707" name="ln-707"></a>
-<a id="ln-708" name="ln-708"></a>    <span class="c">!***************************************************************</span>
-<a id="ln-709" name="ln-709"></a>    <span class="c">!&gt;</span>
-<a id="ln-710" name="ln-710"></a>    <span class="c">!  Sort the index array of `str`, based on int vec comparison.</span>
-<a id="ln-711" name="ln-711"></a>
-<a id="ln-712" name="ln-712"></a>        <span class="k">recursive subroutine </span><span class="n">quicksort</span><span class="p">(</span><span class="n">ilow</span><span class="p">,</span><span class="n">ihigh</span><span class="p">)</span>
-<a id="ln-713" name="ln-713"></a>
-<a id="ln-714" name="ln-714"></a>        <span class="k">implicit none</span>
-<a id="ln-715" name="ln-715"></a>
-<a id="ln-716" name="ln-716"></a><span class="k">        </span><span class="kt">integer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">ilow</span>
-<a id="ln-717" name="ln-717"></a>        <span class="kt">integer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">ihigh</span>
+<a id="ln-693" name="ln-693"></a><span class="k">    </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span> <span class="kd">::</span> <span class="n">str</span>
+<a id="ln-694" name="ln-694"></a>    <span class="kt">logical</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">case_sensitive</span> <span class="c">!! if true, the sort is case sensitive</span>
+<a id="ln-695" name="ln-695"></a>
+<a id="ln-696" name="ln-696"></a>    <span class="k">type</span><span class="p">(</span><span class="n">int_list</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="n">size</span><span class="p">(</span><span class="n">str</span><span class="p">))</span> <span class="kd">::</span> <span class="n">ints</span> <span class="c">!! the `str` converted into arrays of integers</span>
+<a id="ln-697" name="ln-697"></a>    <span class="kt">logical</span><span class="p">,</span><span class="k">dimension</span><span class="p">(</span><span class="n">size</span><span class="p">(</span><span class="n">str</span><span class="p">))</span> <span class="kd">::</span> <span class="n">case_sensitive_vec</span> <span class="c">!! for the elemental routine</span>
+<a id="ln-698" name="ln-698"></a>    <span class="kt">integer</span><span class="p">,</span><span class="k">dimension</span><span class="p">(</span><span class="n">size</span><span class="p">(</span><span class="n">str</span><span class="p">))</span> <span class="kd">::</span> <span class="n">idx</span> <span class="c">!! index vector for sorting</span>
+<a id="ln-699" name="ln-699"></a>    <span class="kt">integer</span> <span class="kd">::</span> <span class="n">i</span> <span class="c">!! counter</span>
+<a id="ln-700" name="ln-700"></a>
+<a id="ln-701" name="ln-701"></a>    <span class="c">!convert vector of strings to vector of int vectors:</span>
+<a id="ln-702" name="ln-702"></a>    <span class="n">case_sensitive_vec</span> <span class="o">=</span> <span class="n">case_sensitive</span>
+<a id="ln-703" name="ln-703"></a>    <span class="k">call </span><span class="n">string_to_int_list</span><span class="p">(</span><span class="n">str</span><span class="p">,</span><span class="n">case_sensitive_vec</span><span class="p">,</span><span class="n">ints</span><span class="p">)</span>
+<a id="ln-704" name="ln-704"></a>
+<a id="ln-705" name="ln-705"></a>    <span class="n">idx</span> <span class="o">=</span> <span class="p">[(</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">str</span><span class="p">))]</span>
+<a id="ln-706" name="ln-706"></a>    <span class="k">call </span><span class="n">quicksort</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">size</span><span class="p">(</span><span class="n">str</span><span class="p">))</span>
+<a id="ln-707" name="ln-707"></a>    <span class="n">str</span> <span class="o">=</span> <span class="n">str</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
+<a id="ln-708" name="ln-708"></a>
+<a id="ln-709" name="ln-709"></a>    <span class="k">contains</span>
+<a id="ln-710" name="ln-710"></a>
+<a id="ln-711" name="ln-711"></a>    <span class="c">!***************************************************************</span>
+<a id="ln-712" name="ln-712"></a>    <span class="c">!&gt;</span>
+<a id="ln-713" name="ln-713"></a>    <span class="c">!  Sort the index array of `str`, based on int vec comparison.</span>
+<a id="ln-714" name="ln-714"></a>
+<a id="ln-715" name="ln-715"></a>        <span class="k">recursive subroutine </span><span class="n">quicksort</span><span class="p">(</span><span class="n">ilow</span><span class="p">,</span><span class="n">ihigh</span><span class="p">)</span>
+<a id="ln-716" name="ln-716"></a>
+<a id="ln-717" name="ln-717"></a>        <span class="k">implicit none</span>
 <a id="ln-718" name="ln-718"></a>
-<a id="ln-719" name="ln-719"></a>        <span class="kt">integer</span> <span class="kd">::</span> <span class="n">ipivot</span> <span class="c">!! pivot element</span>
-<a id="ln-720" name="ln-720"></a>        <span class="kt">integer</span> <span class="kd">::</span> <span class="n">i</span>      <span class="c">!! counter</span>
-<a id="ln-721" name="ln-721"></a>        <span class="kt">integer</span> <span class="kd">::</span> <span class="n">j</span>      <span class="c">!! counter</span>
-<a id="ln-722" name="ln-722"></a>
-<a id="ln-723" name="ln-723"></a>        <span class="k">if</span> <span class="p">(</span> <span class="n">ihigh</span><span class="o">-</span><span class="n">ilow</span><span class="o">&lt;=</span><span class="n">max_size_for_insertion_sort</span> <span class="p">.</span><span class="nb">and</span><span class="p">.</span> <span class="n">ihigh</span><span class="o">&gt;</span><span class="n">ilow</span> <span class="p">)</span> <span class="k">then</span>
-<a id="ln-724" name="ln-724"></a>
-<a id="ln-725" name="ln-725"></a>            <span class="c">! do insertion sort:</span>
-<a id="ln-726" name="ln-726"></a>            <span class="k">do </span><span class="n">i</span> <span class="o">=</span> <span class="n">ilow</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span><span class="n">ihigh</span>
-<a id="ln-727" name="ln-727"></a>                <span class="k">do </span><span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="p">,</span><span class="n">ilow</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span>
-<a id="ln-728" name="ln-728"></a>                    <span class="k">if</span> <span class="p">(</span> <span class="n">ints</span><span class="p">(</span><span class="n">idx</span><span class="p">(</span><span class="n">j</span><span class="p">))</span> <span class="o">&lt;</span> <span class="n">ints</span><span class="p">(</span><span class="n">idx</span><span class="p">(</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span> <span class="p">)</span> <span class="k">then</span>
-<a id="ln-729" name="ln-729"></a><span class="k">                        call </span><span class="n">swap</span><span class="p">(</span><span class="n">idx</span><span class="p">(</span><span class="n">j</span><span class="p">),</span><span class="n">idx</span><span class="p">(</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
-<a id="ln-730" name="ln-730"></a>                    <span class="k">else</span>
-<a id="ln-731" name="ln-731"></a><span class="k">                        exit</span>
-<a id="ln-732" name="ln-732"></a><span class="k">                    end if</span>
-<a id="ln-733" name="ln-733"></a><span class="k">                end do</span>
-<a id="ln-734" name="ln-734"></a><span class="k">            end do</span>
-<a id="ln-735" name="ln-735"></a>
-<a id="ln-736" name="ln-736"></a><span class="k">        </span><span class="n">elseif</span> <span class="p">(</span> <span class="n">ihigh</span><span class="o">-</span><span class="n">ilow</span><span class="o">&gt;</span><span class="n">max_size_for_insertion_sort</span> <span class="p">)</span> <span class="k">then</span>
-<a id="ln-737" name="ln-737"></a>
-<a id="ln-738" name="ln-738"></a>            <span class="c">! do the normal quicksort:</span>
-<a id="ln-739" name="ln-739"></a>            <span class="k">call </span><span class="n">partition</span><span class="p">(</span><span class="n">ilow</span><span class="p">,</span><span class="n">ihigh</span><span class="p">,</span><span class="n">ipivot</span><span class="p">)</span>
-<a id="ln-740" name="ln-740"></a>            <span class="k">call </span><span class="n">quicksort</span><span class="p">(</span><span class="n">ilow</span><span class="p">,</span><span class="n">ipivot</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-<a id="ln-741" name="ln-741"></a>            <span class="k">call </span><span class="n">quicksort</span><span class="p">(</span><span class="n">ipivot</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span><span class="n">ihigh</span><span class="p">)</span>
-<a id="ln-742" name="ln-742"></a>
-<a id="ln-743" name="ln-743"></a>        <span class="k">end if</span>
-<a id="ln-744" name="ln-744"></a>
-<a id="ln-745" name="ln-745"></a><span class="k">        end subroutine </span><span class="n">quicksort</span>
-<a id="ln-746" name="ln-746"></a>
-<a id="ln-747" name="ln-747"></a>    <span class="c">!***************************************************************</span>
-<a id="ln-748" name="ln-748"></a>    <span class="c">!&gt;</span>
-<a id="ln-749" name="ln-749"></a>    <span class="c">!  Partition the index array of `str`, based on int vec comparison.</span>
-<a id="ln-750" name="ln-750"></a>
-<a id="ln-751" name="ln-751"></a>        <span class="k">subroutine </span><span class="n">partition</span><span class="p">(</span><span class="n">ilow</span><span class="p">,</span><span class="n">ihigh</span><span class="p">,</span><span class="n">ipivot</span><span class="p">)</span>
-<a id="ln-752" name="ln-752"></a>
-<a id="ln-753" name="ln-753"></a>        <span class="k">implicit none</span>
-<a id="ln-754" name="ln-754"></a>
-<a id="ln-755" name="ln-755"></a><span class="k">        </span><span class="kt">integer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">ilow</span>
-<a id="ln-756" name="ln-756"></a>        <span class="kt">integer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">ihigh</span>
-<a id="ln-757" name="ln-757"></a>        <span class="kt">integer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span> <span class="kd">::</span> <span class="n">ipivot</span>
-<a id="ln-758" name="ln-758"></a>
-<a id="ln-759" name="ln-759"></a>        <span class="kt">integer</span> <span class="kd">::</span> <span class="n">i</span><span class="p">,</span><span class="n">ip</span>
-<a id="ln-760" name="ln-760"></a>
-<a id="ln-761" name="ln-761"></a>        <span class="k">call </span><span class="n">swap</span><span class="p">(</span><span class="n">idx</span><span class="p">(</span><span class="n">ilow</span><span class="p">),</span><span class="n">idx</span><span class="p">((</span><span class="n">ilow</span><span class="o">+</span><span class="n">ihigh</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
-<a id="ln-762" name="ln-762"></a>        <span class="n">ip</span> <span class="o">=</span> <span class="n">ilow</span>
-<a id="ln-763" name="ln-763"></a>        <span class="k">do </span><span class="n">i</span> <span class="o">=</span> <span class="n">ilow</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">ihigh</span>
-<a id="ln-764" name="ln-764"></a>            <span class="k">if</span> <span class="p">(</span> <span class="n">ints</span><span class="p">(</span><span class="n">idx</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="o">&lt;</span> <span class="n">ints</span><span class="p">(</span><span class="n">idx</span><span class="p">(</span><span class="n">ilow</span><span class="p">))</span> <span class="p">)</span> <span class="k">then</span>
-<a id="ln-765" name="ln-765"></a><span class="k">                </span><span class="n">ip</span> <span class="o">=</span> <span class="n">ip</span> <span class="o">+</span> <span class="mi">1</span>
-<a id="ln-766" name="ln-766"></a>                <span class="k">call </span><span class="n">swap</span><span class="p">(</span><span class="n">idx</span><span class="p">(</span><span class="n">ip</span><span class="p">),</span><span class="n">idx</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
-<a id="ln-767" name="ln-767"></a>            <span class="k">end if</span>
-<a id="ln-768" name="ln-768"></a><span class="k">        end do</span>
-<a id="ln-769" name="ln-769"></a><span class="k">        call </span><span class="n">swap</span><span class="p">(</span><span class="n">idx</span><span class="p">(</span><span class="n">ilow</span><span class="p">),</span><span class="n">idx</span><span class="p">(</span><span class="n">ip</span><span class="p">))</span>
-<a id="ln-770" name="ln-770"></a>        <span class="n">ipivot</span> <span class="o">=</span> <span class="n">ip</span>
-<a id="ln-771" name="ln-771"></a>
-<a id="ln-772" name="ln-772"></a>        <span class="k">end subroutine </span><span class="n">partition</span>
-<a id="ln-773" name="ln-773"></a>
-<a id="ln-774" name="ln-774"></a>    <span class="k">end subroutine </span><span class="n">lexical_sort_natural_recursive</span>
-<a id="ln-775" name="ln-775"></a><span class="c">!*****************************************************************************************</span>
+<a id="ln-719" name="ln-719"></a><span class="k">        </span><span class="kt">integer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">ilow</span>
+<a id="ln-720" name="ln-720"></a>        <span class="kt">integer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">ihigh</span>
+<a id="ln-721" name="ln-721"></a>
+<a id="ln-722" name="ln-722"></a>        <span class="kt">integer</span> <span class="kd">::</span> <span class="n">ipivot</span> <span class="c">!! pivot element</span>
+<a id="ln-723" name="ln-723"></a>        <span class="kt">integer</span> <span class="kd">::</span> <span class="n">i</span>      <span class="c">!! counter</span>
+<a id="ln-724" name="ln-724"></a>        <span class="kt">integer</span> <span class="kd">::</span> <span class="n">j</span>      <span class="c">!! counter</span>
+<a id="ln-725" name="ln-725"></a>
+<a id="ln-726" name="ln-726"></a>        <span class="k">if</span> <span class="p">(</span> <span class="n">ihigh</span><span class="o">-</span><span class="n">ilow</span><span class="o">&lt;=</span><span class="n">max_size_for_insertion_sort</span> <span class="p">.</span><span class="nb">and</span><span class="p">.</span> <span class="n">ihigh</span><span class="o">&gt;</span><span class="n">ilow</span> <span class="p">)</span> <span class="k">then</span>
+<a id="ln-727" name="ln-727"></a>
+<a id="ln-728" name="ln-728"></a>            <span class="c">! do insertion sort:</span>
+<a id="ln-729" name="ln-729"></a>            <span class="k">do </span><span class="n">i</span> <span class="o">=</span> <span class="n">ilow</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span><span class="n">ihigh</span>
+<a id="ln-730" name="ln-730"></a>                <span class="k">do </span><span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="p">,</span><span class="n">ilow</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span>
+<a id="ln-731" name="ln-731"></a>                    <span class="k">if</span> <span class="p">(</span> <span class="n">ints</span><span class="p">(</span><span class="n">idx</span><span class="p">(</span><span class="n">j</span><span class="p">))</span> <span class="o">&lt;</span> <span class="n">ints</span><span class="p">(</span><span class="n">idx</span><span class="p">(</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span> <span class="p">)</span> <span class="k">then</span>
+<a id="ln-732" name="ln-732"></a><span class="k">                        call </span><span class="n">swap</span><span class="p">(</span><span class="n">idx</span><span class="p">(</span><span class="n">j</span><span class="p">),</span><span class="n">idx</span><span class="p">(</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+<a id="ln-733" name="ln-733"></a>                    <span class="k">else</span>
+<a id="ln-734" name="ln-734"></a><span class="k">                        exit</span>
+<a id="ln-735" name="ln-735"></a><span class="k">                    end if</span>
+<a id="ln-736" name="ln-736"></a><span class="k">                end do</span>
+<a id="ln-737" name="ln-737"></a><span class="k">            end do</span>
+<a id="ln-738" name="ln-738"></a>
+<a id="ln-739" name="ln-739"></a><span class="k">        </span><span class="n">elseif</span> <span class="p">(</span> <span class="n">ihigh</span><span class="o">-</span><span class="n">ilow</span><span class="o">&gt;</span><span class="n">max_size_for_insertion_sort</span> <span class="p">)</span> <span class="k">then</span>
+<a id="ln-740" name="ln-740"></a>
+<a id="ln-741" name="ln-741"></a>            <span class="c">! do the normal quicksort:</span>
+<a id="ln-742" name="ln-742"></a>            <span class="k">call </span><span class="n">partition</span><span class="p">(</span><span class="n">ilow</span><span class="p">,</span><span class="n">ihigh</span><span class="p">,</span><span class="n">ipivot</span><span class="p">)</span>
+<a id="ln-743" name="ln-743"></a>            <span class="k">call </span><span class="n">quicksort</span><span class="p">(</span><span class="n">ilow</span><span class="p">,</span><span class="n">ipivot</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<a id="ln-744" name="ln-744"></a>            <span class="k">call </span><span class="n">quicksort</span><span class="p">(</span><span class="n">ipivot</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span><span class="n">ihigh</span><span class="p">)</span>
+<a id="ln-745" name="ln-745"></a>
+<a id="ln-746" name="ln-746"></a>        <span class="k">end if</span>
+<a id="ln-747" name="ln-747"></a>
+<a id="ln-748" name="ln-748"></a><span class="k">        end subroutine </span><span class="n">quicksort</span>
+<a id="ln-749" name="ln-749"></a>
+<a id="ln-750" name="ln-750"></a>    <span class="c">!***************************************************************</span>
+<a id="ln-751" name="ln-751"></a>    <span class="c">!&gt;</span>
+<a id="ln-752" name="ln-752"></a>    <span class="c">!  Partition the index array of `str`, based on int vec comparison.</span>
+<a id="ln-753" name="ln-753"></a>
+<a id="ln-754" name="ln-754"></a>        <span class="k">subroutine </span><span class="n">partition</span><span class="p">(</span><span class="n">ilow</span><span class="p">,</span><span class="n">ihigh</span><span class="p">,</span><span class="n">ipivot</span><span class="p">)</span>
+<a id="ln-755" name="ln-755"></a>
+<a id="ln-756" name="ln-756"></a>        <span class="k">implicit none</span>
+<a id="ln-757" name="ln-757"></a>
+<a id="ln-758" name="ln-758"></a><span class="k">        </span><span class="kt">integer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">ilow</span>
+<a id="ln-759" name="ln-759"></a>        <span class="kt">integer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>  <span class="kd">::</span> <span class="n">ihigh</span>
+<a id="ln-760" name="ln-760"></a>        <span class="kt">integer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span> <span class="kd">::</span> <span class="n">ipivot</span>
+<a id="ln-761" name="ln-761"></a>
+<a id="ln-762" name="ln-762"></a>        <span class="kt">integer</span> <span class="kd">::</span> <span class="n">i</span><span class="p">,</span><span class="n">ip</span>
+<a id="ln-763" name="ln-763"></a>
+<a id="ln-764" name="ln-764"></a>        <span class="k">call </span><span class="n">swap</span><span class="p">(</span><span class="n">idx</span><span class="p">(</span><span class="n">ilow</span><span class="p">),</span><span class="n">idx</span><span class="p">((</span><span class="n">ilow</span><span class="o">+</span><span class="n">ihigh</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+<a id="ln-765" name="ln-765"></a>        <span class="n">ip</span> <span class="o">=</span> <span class="n">ilow</span>
+<a id="ln-766" name="ln-766"></a>        <span class="k">do </span><span class="n">i</span> <span class="o">=</span> <span class="n">ilow</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">ihigh</span>
+<a id="ln-767" name="ln-767"></a>            <span class="k">if</span> <span class="p">(</span> <span class="n">ints</span><span class="p">(</span><span class="n">idx</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="o">&lt;</span> <span class="n">ints</span><span class="p">(</span><span class="n">idx</span><span class="p">(</span><span class="n">ilow</span><span class="p">))</span> <span class="p">)</span> <span class="k">then</span>
+<a id="ln-768" name="ln-768"></a><span class="k">                </span><span class="n">ip</span> <span class="o">=</span> <span class="n">ip</span> <span class="o">+</span> <span class="mi">1</span>
+<a id="ln-769" name="ln-769"></a>                <span class="k">call </span><span class="n">swap</span><span class="p">(</span><span class="n">idx</span><span class="p">(</span><span class="n">ip</span><span class="p">),</span><span class="n">idx</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+<a id="ln-770" name="ln-770"></a>            <span class="k">end if</span>
+<a id="ln-771" name="ln-771"></a><span class="k">        end do</span>
+<a id="ln-772" name="ln-772"></a><span class="k">        call </span><span class="n">swap</span><span class="p">(</span><span class="n">idx</span><span class="p">(</span><span class="n">ilow</span><span class="p">),</span><span class="n">idx</span><span class="p">(</span><span class="n">ip</span><span class="p">))</span>
+<a id="ln-773" name="ln-773"></a>        <span class="n">ipivot</span> <span class="o">=</span> <span class="n">ip</span>
+<a id="ln-774" name="ln-774"></a>
+<a id="ln-775" name="ln-775"></a>        <span class="k">end subroutine </span><span class="n">partition</span>
 <a id="ln-776" name="ln-776"></a>
-<a id="ln-777" name="ln-777"></a><span class="c">!*****************************************************************************************</span>
-<a id="ln-778" name="ln-778"></a><span class="c">!&gt;</span>
-<a id="ln-779" name="ln-779"></a><span class="c">!  Returns true if the list is lexically sorted in increasing order.</span>
-<a id="ln-780" name="ln-780"></a>
-<a id="ln-781" name="ln-781"></a>    <span class="kt">logical </span><span class="k">function </span><span class="n">list_is_sorted</span><span class="p">(</span><span class="n">str</span><span class="p">,</span><span class="n">case_sensitive</span><span class="p">,</span><span class="n">natural</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">sorted</span><span class="p">)</span>
-<a id="ln-782" name="ln-782"></a>
-<a id="ln-783" name="ln-783"></a>    <span class="k">implicit none</span>
-<a id="ln-784" name="ln-784"></a>
-<a id="ln-785" name="ln-785"></a><span class="k">    </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span> <span class="kd">::</span> <span class="n">str</span>
-<a id="ln-786" name="ln-786"></a>    <span class="kt">logical</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">case_sensitive</span> <span class="c">!! if true, the sort is case sensitive</span>
-<a id="ln-787" name="ln-787"></a>    <span class="kt">logical</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">natural</span> <span class="c">!! if true, the sort is &quot;natural&quot;</span>
-<a id="ln-788" name="ln-788"></a>
-<a id="ln-789" name="ln-789"></a>    <span class="k">type</span><span class="p">(</span><span class="n">int_list</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="n">size</span><span class="p">(</span><span class="n">str</span><span class="p">))</span> <span class="kd">::</span> <span class="n">ints</span> <span class="c">!! the `str` converted into arrays of integers</span>
-<a id="ln-790" name="ln-790"></a>    <span class="kt">logical</span><span class="p">,</span><span class="k">dimension</span><span class="p">(</span><span class="n">size</span><span class="p">(</span><span class="n">str</span><span class="p">))</span> <span class="kd">::</span> <span class="n">case_sensitive_vec</span> <span class="c">!! for the elemental routine</span>
-<a id="ln-791" name="ln-791"></a>    <span class="kt">integer</span> <span class="kd">::</span> <span class="n">i</span> <span class="c">!! counter</span>
-<a id="ln-792" name="ln-792"></a>
-<a id="ln-793" name="ln-793"></a>    <span class="n">sorted</span> <span class="o">=</span> <span class="p">.</span><span class="n">true</span><span class="p">.</span>
-<a id="ln-794" name="ln-794"></a>
-<a id="ln-795" name="ln-795"></a>    <span class="k">if</span> <span class="p">(</span><span class="n">natural</span><span class="p">)</span> <span class="k">then</span>
-<a id="ln-796" name="ln-796"></a>
-<a id="ln-797" name="ln-797"></a>        <span class="c">!convert vector of strings to vector of int vectors:</span>
-<a id="ln-798" name="ln-798"></a>        <span class="n">case_sensitive_vec</span> <span class="o">=</span> <span class="n">case_sensitive</span>
-<a id="ln-799" name="ln-799"></a>        <span class="k">call </span><span class="n">string_to_int_list</span><span class="p">(</span><span class="n">str</span><span class="p">,</span><span class="n">case_sensitive_vec</span><span class="p">,</span><span class="n">ints</span><span class="p">)</span>
-<a id="ln-800" name="ln-800"></a>
-<a id="ln-801" name="ln-801"></a>        <span class="k">do </span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">size</span><span class="p">(</span><span class="n">str</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span>
-<a id="ln-802" name="ln-802"></a>            <span class="k">if</span> <span class="p">(</span> <span class="n">ints</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">ints</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="p">)</span> <span class="k">then</span>
-<a id="ln-803" name="ln-803"></a><span class="k">                </span><span class="n">sorted</span> <span class="o">=</span> <span class="p">.</span><span class="n">false</span><span class="p">.</span>
-<a id="ln-804" name="ln-804"></a>                <span class="k">return</span>
-<a id="ln-805" name="ln-805"></a><span class="k">            end if</span>
-<a id="ln-806" name="ln-806"></a><span class="k">        end do</span>
-<a id="ln-807" name="ln-807"></a>
-<a id="ln-808" name="ln-808"></a><span class="k">    else</span>
-<a id="ln-809" name="ln-809"></a><span class="k">        do </span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">size</span><span class="p">(</span><span class="n">str</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span>
-<a id="ln-810" name="ln-810"></a>            <span class="k">if</span> <span class="p">(</span><span class="n">lexical_lt</span><span class="p">(</span><span class="n">str</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span><span class="n">str</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="n">case_sensitive</span><span class="p">))</span> <span class="k">then</span>
-<a id="ln-811" name="ln-811"></a><span class="k">                </span><span class="n">sorted</span> <span class="o">=</span> <span class="p">.</span><span class="n">false</span><span class="p">.</span>
-<a id="ln-812" name="ln-812"></a>                <span class="k">return</span>
-<a id="ln-813" name="ln-813"></a><span class="k">            end if</span>
-<a id="ln-814" name="ln-814"></a><span class="k">        end do</span>
-<a id="ln-815" name="ln-815"></a><span class="k">    end if</span>
-<a id="ln-816" name="ln-816"></a>
-<a id="ln-817" name="ln-817"></a><span class="k">    end function </span><span class="n">list_is_sorted</span>
-<a id="ln-818" name="ln-818"></a><span class="c">!*****************************************************************************************</span>
+<a id="ln-777" name="ln-777"></a>    <span class="k">end subroutine </span><span class="n">lexical_sort_natural_recursive</span>
+<a id="ln-778" name="ln-778"></a><span class="c">!*****************************************************************************************</span>
+<a id="ln-779" name="ln-779"></a>
+<a id="ln-780" name="ln-780"></a><span class="c">!*****************************************************************************************</span>
+<a id="ln-781" name="ln-781"></a><span class="c">!&gt;</span>
+<a id="ln-782" name="ln-782"></a><span class="c">!  Returns true if the list is lexically sorted in increasing order.</span>
+<a id="ln-783" name="ln-783"></a>
+<a id="ln-784" name="ln-784"></a>    <span class="kt">logical </span><span class="k">function </span><span class="n">list_is_sorted</span><span class="p">(</span><span class="n">str</span><span class="p">,</span><span class="n">case_sensitive</span><span class="p">,</span><span class="n">natural</span><span class="p">)</span> <span class="k">result</span><span class="p">(</span><span class="n">sorted</span><span class="p">)</span>
+<a id="ln-785" name="ln-785"></a>
+<a id="ln-786" name="ln-786"></a>    <span class="k">implicit none</span>
+<a id="ln-787" name="ln-787"></a>
+<a id="ln-788" name="ln-788"></a><span class="k">    </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span> <span class="kd">::</span> <span class="n">str</span>
+<a id="ln-789" name="ln-789"></a>    <span class="kt">logical</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">case_sensitive</span> <span class="c">!! if true, the sort is case sensitive</span>
+<a id="ln-790" name="ln-790"></a>    <span class="kt">logical</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">natural</span> <span class="c">!! if true, the sort is &quot;natural&quot;</span>
+<a id="ln-791" name="ln-791"></a>
+<a id="ln-792" name="ln-792"></a>    <span class="k">type</span><span class="p">(</span><span class="n">int_list</span><span class="p">),</span><span class="k">dimension</span><span class="p">(</span><span class="n">size</span><span class="p">(</span><span class="n">str</span><span class="p">))</span> <span class="kd">::</span> <span class="n">ints</span> <span class="c">!! the `str` converted into arrays of integers</span>
+<a id="ln-793" name="ln-793"></a>    <span class="kt">logical</span><span class="p">,</span><span class="k">dimension</span><span class="p">(</span><span class="n">size</span><span class="p">(</span><span class="n">str</span><span class="p">))</span> <span class="kd">::</span> <span class="n">case_sensitive_vec</span> <span class="c">!! for the elemental routine</span>
+<a id="ln-794" name="ln-794"></a>    <span class="kt">integer</span> <span class="kd">::</span> <span class="n">i</span> <span class="c">!! counter</span>
+<a id="ln-795" name="ln-795"></a>
+<a id="ln-796" name="ln-796"></a>    <span class="n">sorted</span> <span class="o">=</span> <span class="p">.</span><span class="n">true</span><span class="p">.</span>
+<a id="ln-797" name="ln-797"></a>
+<a id="ln-798" name="ln-798"></a>    <span class="k">if</span> <span class="p">(</span><span class="n">natural</span><span class="p">)</span> <span class="k">then</span>
+<a id="ln-799" name="ln-799"></a>
+<a id="ln-800" name="ln-800"></a>        <span class="c">!convert vector of strings to vector of int vectors:</span>
+<a id="ln-801" name="ln-801"></a>        <span class="n">case_sensitive_vec</span> <span class="o">=</span> <span class="n">case_sensitive</span>
+<a id="ln-802" name="ln-802"></a>        <span class="k">call </span><span class="n">string_to_int_list</span><span class="p">(</span><span class="n">str</span><span class="p">,</span><span class="n">case_sensitive_vec</span><span class="p">,</span><span class="n">ints</span><span class="p">)</span>
+<a id="ln-803" name="ln-803"></a>
+<a id="ln-804" name="ln-804"></a>        <span class="k">do </span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">size</span><span class="p">(</span><span class="n">str</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span>
+<a id="ln-805" name="ln-805"></a>            <span class="k">if</span> <span class="p">(</span> <span class="n">ints</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">ints</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="p">)</span> <span class="k">then</span>
+<a id="ln-806" name="ln-806"></a><span class="k">                </span><span class="n">sorted</span> <span class="o">=</span> <span class="p">.</span><span class="n">false</span><span class="p">.</span>
+<a id="ln-807" name="ln-807"></a>                <span class="k">return</span>
+<a id="ln-808" name="ln-808"></a><span class="k">            end if</span>
+<a id="ln-809" name="ln-809"></a><span class="k">        end do</span>
+<a id="ln-810" name="ln-810"></a>
+<a id="ln-811" name="ln-811"></a><span class="k">    else</span>
+<a id="ln-812" name="ln-812"></a><span class="k">        do </span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">size</span><span class="p">(</span><span class="n">str</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span>
+<a id="ln-813" name="ln-813"></a>            <span class="k">if</span> <span class="p">(</span><span class="n">lexical_lt</span><span class="p">(</span><span class="n">str</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span><span class="n">str</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="n">case_sensitive</span><span class="p">))</span> <span class="k">then</span>
+<a id="ln-814" name="ln-814"></a><span class="k">                </span><span class="n">sorted</span> <span class="o">=</span> <span class="p">.</span><span class="n">false</span><span class="p">.</span>
+<a id="ln-815" name="ln-815"></a>                <span class="k">return</span>
+<a id="ln-816" name="ln-816"></a><span class="k">            end if</span>
+<a id="ln-817" name="ln-817"></a><span class="k">        end do</span>
+<a id="ln-818" name="ln-818"></a><span class="k">    end if</span>
 <a id="ln-819" name="ln-819"></a>
-<a id="ln-820" name="ln-820"></a><span class="c">!*****************************************************************************************</span>
-<a id="ln-821" name="ln-821"></a>    <span class="k">end module </span><span class="n">string_sort_module</span>
-<a id="ln-822" name="ln-822"></a><span class="c">!*****************************************************************************************</span>
+<a id="ln-820" name="ln-820"></a><span class="k">    end function </span><span class="n">list_is_sorted</span>
+<a id="ln-821" name="ln-821"></a><span class="c">!*****************************************************************************************</span>
+<a id="ln-822" name="ln-822"></a>
+<a id="ln-823" name="ln-823"></a><span class="c">!*****************************************************************************************</span>
+<a id="ln-824" name="ln-824"></a>    <span class="k">end module </span><span class="n">string_sort_module</span>
+<a id="ln-825" name="ln-825"></a><span class="c">!*****************************************************************************************</span>
 </pre></div>
 
     </section>

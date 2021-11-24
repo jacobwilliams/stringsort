@@ -128,7 +128,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title="39.4% of total for procedures.">84 statements</a>
+    title="40.3% of total for procedures.">87 statements</a>
      </li> 
      
      
@@ -369,11 +369,14 @@ increasing order (<code>str(1) &lt;= ... &lt;= str(n)</code>)</p></td>
                 <span class="c">! do insertion sort on str( start:endd )</span>
                 <span class="n">insertion</span><span class="p">:</span> <span class="k">do </span><span class="n">i</span> <span class="o">=</span> <span class="n">start</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span><span class="n">endd</span>
                     <span class="k">do </span><span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="p">,</span><span class="n">start</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span>
-                        <span class="k">if</span> <span class="p">(</span> <span class="n">lexical_ge</span><span class="p">(</span><span class="n">str</span><span class="p">(</span><span class="n">j</span><span class="p">),</span><span class="n">str</span><span class="p">(</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="n">case_sensitive</span><span class="p">)</span> <span class="p">)</span> <span class="k">cycle </span><span class="n">insertion</span>
-                        <span class="n">dmnmx</span>   <span class="o">=</span> <span class="n">str</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
-                        <span class="n">str</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>   <span class="o">=</span> <span class="n">str</span><span class="p">(</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-                        <span class="n">str</span><span class="p">(</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">dmnmx</span>
-                    <span class="k">end do</span>
+                        <span class="k">if</span> <span class="p">(</span> <span class="n">lexical_lt</span><span class="p">(</span><span class="n">str</span><span class="p">(</span><span class="n">j</span><span class="p">),</span><span class="n">str</span><span class="p">(</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="n">case_sensitive</span><span class="p">)</span> <span class="p">)</span> <span class="k">then</span>
+<span class="k">                            </span><span class="n">dmnmx</span>    <span class="o">=</span> <span class="n">str</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+                            <span class="n">str</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>   <span class="o">=</span> <span class="n">str</span><span class="p">(</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+                            <span class="n">str</span><span class="p">(</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">dmnmx</span>
+                        <span class="k">else</span>
+<span class="k">                            exit</span>
+<span class="k">                        end if</span>
+<span class="k">                    end do</span>
 <span class="k">                end do </span><span class="n">insertion</span>
 
             <span class="n">elseif</span> <span class="p">(</span> <span class="n">endd</span><span class="o">-</span><span class="n">start</span><span class="o">&gt;</span><span class="n">max_size_for_insertion_sort</span> <span class="p">)</span> <span class="k">then</span>
