@@ -511,10 +511,13 @@
                 ! do insertion sort on str( start:endd )
                 insertion: do i = start + 1,endd
                     do j = i,start + 1,-1
-                        if ( lexical_ge(str(j),str(j-1),case_sensitive) ) cycle insertion
-                        dmnmx   = str(j)
-                        str(j)   = str(j-1)
-                        str(j-1) = dmnmx
+                        if ( lexical_lt(str(j),str(j-1),case_sensitive) ) then
+                            dmnmx    = str(j)
+                            str(j)   = str(j-1)
+                            str(j-1) = dmnmx
+                        else
+                            exit
+                        end if
                     end do
                 end do insertion
 
