@@ -1,6 +1,7 @@
 project: stringsort
 project_dir: ./src
 output_dir: ./doc
+media_dir: ./media
 project_github: https://github.com/jacobwilliams/stringsort
 summary: String Sorting Routines
 author: Jacob Williams
@@ -12,8 +13,10 @@ docmark: !
 display: public
 source: true
 graph: false
-extra_mods: iso_fortran_env:https://gcc.gnu.org/onlinedocs/gfortran/ISO_005fFORTRAN_005fENV.html
+exclude_dir: ./tests
 exclude: test.f90
          test_natural.f90
+iso_fortran_env:https://gcc.gnu.org/onlinedocs/gfortran/ISO_005fFORTRAN_005fENV.html
 
-Just some sorting routines for strings.
+{!README.md!}
+
