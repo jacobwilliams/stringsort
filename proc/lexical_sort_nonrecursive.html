@@ -4,9 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-   
    <meta name="description" content="String Sorting Routines">
-    
     <meta name="author" content="Jacob Williams" >
     <link rel="icon" href="../favicon.png">
 
@@ -16,10 +14,7 @@
     <link href="../css/pygments.css" rel="stylesheet">
     <link href="../css/font-awesome.min.css" rel="stylesheet">
     <link href="../css/local.css" rel="stylesheet">
-    
     <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
-    
-    
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -48,50 +43,25 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-        
             <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
               <a href="#" class="dropdown-toggle"
               data-toggle="dropdown" role="button"
               aria-haspopup="true"
      aria-expanded="false">Contents <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          
-              
             <li><a href="../sourcefile/stringsort.f90.html">Source File</a></li>
-        
-        
-        
             <li><a href="../lists/modules.html">Modules</a></li>
-        
-            
-                                
             <li><a href="../lists/procedures.html">Procedures</a></li>
-        
-               
-               
-        
-        
+                   <li><a href="../lists/types.html">Derived Types</a></li>
+       
             </ul>
         
             </li>
-
-
 <li class="visible-xs hidden-sm visible-lg"><a href="../sourcefile/stringsort.f90.html">Source File</a></li>
-
-
-
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
-
-
-
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
-
-                             
-
-
-
+                             <li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
           </ul>
-        
         <form action="../search.html" class="navbar-form navbar-right" role="search">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
@@ -100,51 +70,29 @@
         <button type="submit" class="btn btn-default">Submit</button>
 -->
         </form>
-        
         </div><!--/.nav-collapse -->
       </div>
     </nav>
 
     <div class="container">
-    
-  
   <div class="row">
     <h1>lexical_sort_nonrecursive
       <small>Subroutine</small>
-    
     </h1>
-    
-<div class="row">
+    <div class="row">
   <div class="col-lg-12">
 <div class="well well-sm">
   <ul class="list-inline" style="margin-bottom:0px;display:inline">
-     
-     
-     
-     
-     
-    
-    
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
     title="40.3% of total for procedures.">87 statements</a>
      </li> 
-     
-     
-     
     <li><i class="fa fa-code"></i><a href="../src/stringsort.f90"> Source File</a></li>
-     
-     
   </ul>
   <ol class="breadcrumb in-well text-right">
-  
-    
      <li><a href='../sourcefile/stringsort.f90.html'>stringsort.f90</a></li>
-    
      <li><a href='../module/string_sort_module.html'>string_sort_module</a></li>
-    
-  
      <li class="active">lexical_sort_nonrecursive</li>
   </ol>
 </div>
@@ -160,32 +108,9 @@
   
   <div class="row">
     <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
-    
-<div id="sidebar">
-  
-<h3>Contents</h3>
+    <div id="sidebar">
+  <h3>Contents</h3>
  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="panel panel-primary">
   <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
   <div class="list-group">
@@ -193,24 +118,14 @@
   </div>
 </div>
 
-
-
 </div>
 
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>
-public pure subroutine lexical_sort_nonrecursive(str, case_sensitive)
+    <h2>public pure subroutine lexical_sort_nonrecursive(str, case_sensitive)</h2>
     
-    
-   
-</h2>
-    
-  
 
-
-    
     <p>Sorts a character array <code>str</code> in increasing order.</p>
 <p>Uses a non-recursive quicksort, reverting to insertion sort on arrays of
   size <script type="math/tex">\le 20</script>. Dimension of <code>stack</code> limits array size to about <script type="math/tex">2^{32}</script>.</p>
@@ -224,87 +139,33 @@ public pure subroutine lexical_sort_nonrecursive(str, case_sensitive)
 <li>Extensively modified by Jacob Williams,Feb. 2016. Converted to
     modern Fortran and removed the descending sort option.</li>
 </ul>
-    
 
     <h3>Arguments</h3>
-    
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
+      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
-
-  
-  
-  
-  
 <tr>
-  
   <td><span class="anchor" id="variable-str~2"></span>character(len=*),</td>
-  <td>intent(inout),</td>
-  <td></td>
-  
-  <td>dimension(:)</td><td>::</td>
+<td>intent(inout),</td>
+  <td></td>  <td>dimension(:)</td><td>::</td>
   <td><strong>str</strong></td><td><p>on entry,the array to be sorted.
 on exit,<code>str</code> has been sorted into
 increasing order (<code>str(1) &lt;= ... &lt;= str(n)</code>)</p></td>
-  
 </tr>
-
-  
-  
-  
-  
 <tr>
-  
   <td><span class="anchor" id="variable-case_sensitive~2"></span>logical,</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
   <td><strong>case_sensitive</strong></td><td><p>if true, the sort is case sensitive</p></td>
-  
 </tr>
-
 </tbody>
 </table>
 
-    
-    
-    
-    
-     
     <br>
 
     <section class="visible-xs visible-sm hidden-md">
-      
-<h3>Contents</h3>
+      <h3>Contents</h3>
  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="panel panel-primary">
   <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
   <div class="list-group">
@@ -312,166 +173,151 @@ increasing order (<code>str(1) &lt;= ... &lt;= str(n)</code>)</p></td>
   </div>
 </div>
 
-
-
     </section>
     <br class="visible-xs visible-sm hidden-md">
 
-    
 
-    
-    
-    
     
     
 
     
     
-    
-    
-    
 
 
-    
-    
     
     <section>
     <h2><span class="anchor" id="src"></span>Source Code</h2>
-    <div class="highlight"><pre><span></span>    <span class="k">pure subroutine </span><span class="n">lexical_sort_nonrecursive</span><span class="p">(</span><span class="n">str</span><span class="p">,</span><span class="n">case_sensitive</span><span class="p">)</span>
+    <div class="highlight"><pre><span></span><span class="w">    </span><span class="k">pure subroutine </span><span class="n">lexical_sort_nonrecursive</span><span class="p">(</span><span class="n">str</span><span class="p">,</span><span class="n">case_sensitive</span><span class="p">)</span><span class="w"></span>
 
-    <span class="k">implicit none</span>
+<span class="w">    </span><span class="k">implicit none</span>
 
-<span class="k">    </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span> <span class="kd">::</span> <span class="n">str</span>  <span class="c">!! on entry,the array to be sorted.</span>
-                                                        <span class="c">!! on exit,`str` has been sorted into</span>
-                                                        <span class="c">!! increasing order (`str(1) &lt;= ... &lt;= str(n)`)</span>
-    <span class="kt">logical</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">case_sensitive</span> <span class="c">!! if true, the sort is case sensitive</span>
+<span class="k">    </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="k">dimension</span><span class="p">(:),</span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">str</span><span class="w">  </span><span class="c">!! on entry,the array to be sorted.</span>
+<span class="w">                                                        </span><span class="c">!! on exit,`str` has been sorted into</span>
+<span class="w">                                                        </span><span class="c">!! increasing order (`str(1) &lt;= ... &lt;= str(n)`)</span>
+<span class="w">    </span><span class="kt">logical</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">case_sensitive</span><span class="w"> </span><span class="c">!! if true, the sort is case sensitive</span>
 
-    <span class="kt">integer</span> <span class="kd">::</span> <span class="n">endd</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">start</span><span class="p">,</span><span class="n">stkpnt</span>
-    <span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">str</span><span class="p">))</span> <span class="kd">::</span> <span class="n">d1</span><span class="p">,</span><span class="n">d2</span><span class="p">,</span><span class="n">d3</span><span class="p">,</span><span class="n">dmnmx</span><span class="p">,</span><span class="n">tmp</span>
-    <span class="kt">integer</span><span class="p">,</span><span class="k">dimension</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">32</span><span class="p">)</span> <span class="kd">::</span> <span class="n">stack</span>
+<span class="w">    </span><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">endd</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">start</span><span class="p">,</span><span class="n">stkpnt</span><span class="w"></span>
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">str</span><span class="p">))</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">d1</span><span class="p">,</span><span class="n">d2</span><span class="p">,</span><span class="n">d3</span><span class="p">,</span><span class="n">dmnmx</span><span class="p">,</span><span class="n">tmp</span><span class="w"></span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="k">dimension</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">32</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">stack</span><span class="w"></span>
 
-    <span class="c">! number of elements to sort:</span>
-    <span class="n">n</span> <span class="o">=</span> <span class="n">size</span><span class="p">(</span><span class="n">str</span><span class="p">)</span>
+<span class="w">    </span><span class="c">! number of elements to sort:</span>
+<span class="w">    </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">size</span><span class="p">(</span><span class="n">str</span><span class="p">)</span><span class="w"></span>
 
-    <span class="k">if</span> <span class="p">(</span> <span class="n">n</span><span class="o">&gt;</span><span class="mi">1</span> <span class="p">)</span> <span class="k">then</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">n</span><span class="o">&gt;</span><span class="mi">1</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
 
-<span class="k">        </span><span class="n">stkpnt</span>     <span class="o">=</span> <span class="mi">1</span>
-        <span class="n">stack</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="mi">1</span>
-        <span class="n">stack</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">n</span>
+<span class="k">        </span><span class="n">stkpnt</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">        </span><span class="n">stack</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">        </span><span class="n">stack</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="w"></span>
 
-        <span class="k">do</span>
+<span class="w">        </span><span class="k">do</span>
 
-<span class="k">            </span><span class="n">start</span>  <span class="o">=</span> <span class="n">stack</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">stkpnt</span><span class="p">)</span>
-            <span class="n">endd</span>   <span class="o">=</span> <span class="n">stack</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">stkpnt</span><span class="p">)</span>
-            <span class="n">stkpnt</span> <span class="o">=</span> <span class="n">stkpnt</span> <span class="o">-</span> <span class="mi">1</span>
-            <span class="k">if</span> <span class="p">(</span> <span class="n">endd</span><span class="o">-</span><span class="n">start</span><span class="o">&lt;=</span><span class="n">max_size_for_insertion_sort</span> <span class="p">.</span><span class="nb">and</span><span class="p">.</span> <span class="n">endd</span><span class="o">&gt;</span><span class="n">start</span> <span class="p">)</span> <span class="k">then</span>
+<span class="k">            </span><span class="n">start</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">stack</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">stkpnt</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="n">endd</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">stack</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">stkpnt</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="n">stkpnt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stkpnt</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">endd</span><span class="o">-</span><span class="n">start</span><span class="o">&lt;=</span><span class="n">max_size_for_insertion_sort</span><span class="w"> </span><span class="p">.</span><span class="nb">and</span><span class="p">.</span><span class="w"> </span><span class="n">endd</span><span class="o">&gt;</span><span class="n">start</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span><span class="w"></span>
 
-                <span class="c">! do insertion sort on str( start:endd )</span>
-                <span class="n">insertion</span><span class="p">:</span> <span class="k">do </span><span class="n">i</span> <span class="o">=</span> <span class="n">start</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span><span class="n">endd</span>
-                    <span class="k">do </span><span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="p">,</span><span class="n">start</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span>
-                        <span class="k">if</span> <span class="p">(</span> <span class="n">lexical_lt</span><span class="p">(</span><span class="n">str</span><span class="p">(</span><span class="n">j</span><span class="p">),</span><span class="n">str</span><span class="p">(</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="n">case_sensitive</span><span class="p">)</span> <span class="p">)</span> <span class="k">then</span>
-<span class="k">                            </span><span class="n">dmnmx</span>    <span class="o">=</span> <span class="n">str</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
-                            <span class="n">str</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>   <span class="o">=</span> <span class="n">str</span><span class="p">(</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-                            <span class="n">str</span><span class="p">(</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="n">dmnmx</span>
-                        <span class="k">else</span>
+<span class="w">                </span><span class="c">! do insertion sort on str( start:endd )</span>
+<span class="w">                </span><span class="n">insertion</span><span class="p">:</span><span class="w"> </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">start</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="n">endd</span><span class="w"></span>
+<span class="w">                    </span><span class="k">do </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="n">start</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="w"></span>
+<span class="w">                        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">lexical_lt</span><span class="p">(</span><span class="n">str</span><span class="p">(</span><span class="n">j</span><span class="p">),</span><span class="n">str</span><span class="p">(</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="n">case_sensitive</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">                            </span><span class="n">dmnmx</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="n">str</span><span class="p">(</span><span class="n">j</span><span class="p">)</span><span class="w"></span>
+<span class="w">                            </span><span class="n">str</span><span class="p">(</span><span class="n">j</span><span class="p">)</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">str</span><span class="p">(</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w"></span>
+<span class="w">                            </span><span class="n">str</span><span class="p">(</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dmnmx</span><span class="w"></span>
+<span class="w">                        </span><span class="k">else</span>
 <span class="k">                            exit</span>
 <span class="k">                        end if</span>
 <span class="k">                    end do</span>
-<span class="k">                end do </span><span class="n">insertion</span>
+<span class="k">                end do </span><span class="n">insertion</span><span class="w"></span>
 
-            <span class="n">elseif</span> <span class="p">(</span> <span class="n">endd</span><span class="o">-</span><span class="n">start</span><span class="o">&gt;</span><span class="n">max_size_for_insertion_sort</span> <span class="p">)</span> <span class="k">then</span>
+<span class="w">            </span><span class="n">elseif</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">endd</span><span class="o">-</span><span class="n">start</span><span class="o">&gt;</span><span class="n">max_size_for_insertion_sort</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span><span class="w"></span>
 
-                <span class="c">! partition str( start:endd ) and stack parts,largest one first</span>
-                <span class="c">! choose partition entry as median of 3</span>
+<span class="w">                </span><span class="c">! partition str( start:endd ) and stack parts,largest one first</span>
+<span class="w">                </span><span class="c">! choose partition entry as median of 3</span>
 
-                <span class="n">d1</span> <span class="o">=</span> <span class="n">str</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
-                <span class="n">d2</span> <span class="o">=</span> <span class="n">str</span><span class="p">(</span><span class="n">endd</span><span class="p">)</span>
-                <span class="n">i</span>  <span class="o">=</span><span class="p">(</span><span class="n">start</span><span class="o">+</span><span class="n">endd</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
-                <span class="n">d3</span> <span class="o">=</span> <span class="n">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-                <span class="k">if</span> <span class="p">(</span> <span class="n">lexical_lt</span><span class="p">(</span><span class="n">d1</span><span class="p">,</span><span class="n">d2</span><span class="p">,</span><span class="n">case_sensitive</span><span class="p">)</span> <span class="p">)</span> <span class="k">then</span>
-<span class="k">                    if</span> <span class="p">(</span> <span class="n">lexical_lt</span><span class="p">(</span><span class="n">d3</span><span class="p">,</span><span class="n">d1</span><span class="p">,</span><span class="n">case_sensitive</span><span class="p">)</span> <span class="p">)</span> <span class="k">then</span>
-<span class="k">                        </span><span class="n">dmnmx</span> <span class="o">=</span> <span class="n">d1</span>
-                    <span class="n">elseif</span> <span class="p">(</span> <span class="n">lexical_lt</span><span class="p">(</span><span class="n">d3</span><span class="p">,</span><span class="n">d2</span><span class="p">,</span><span class="n">case_sensitive</span><span class="p">)</span> <span class="p">)</span> <span class="k">then</span>
-<span class="k">                        </span><span class="n">dmnmx</span> <span class="o">=</span> <span class="n">d3</span>
-                    <span class="k">else</span>
-<span class="k">                        </span><span class="n">dmnmx</span> <span class="o">=</span> <span class="n">d2</span>
-                    <span class="k">endif</span>
-<span class="k">                </span><span class="n">elseif</span> <span class="p">(</span> <span class="n">lexical_lt</span><span class="p">(</span><span class="n">d3</span><span class="p">,</span><span class="n">d2</span><span class="p">,</span><span class="n">case_sensitive</span><span class="p">)</span> <span class="p">)</span> <span class="k">then</span>
-<span class="k">                    </span><span class="n">dmnmx</span> <span class="o">=</span> <span class="n">d2</span>
-                <span class="n">elseif</span> <span class="p">(</span> <span class="n">lexical_lt</span><span class="p">(</span><span class="n">d3</span><span class="p">,</span><span class="n">d1</span><span class="p">,</span><span class="n">case_sensitive</span><span class="p">)</span> <span class="p">)</span> <span class="k">then</span>
-<span class="k">                    </span><span class="n">dmnmx</span> <span class="o">=</span> <span class="n">d3</span>
-                <span class="k">else</span>
-<span class="k">                    </span><span class="n">dmnmx</span> <span class="o">=</span> <span class="n">d1</span>
-                <span class="k">endif</span>
+<span class="w">                </span><span class="n">d1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">str</span><span class="p">(</span><span class="n">start</span><span class="p">)</span><span class="w"></span>
+<span class="w">                </span><span class="n">d2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">str</span><span class="p">(</span><span class="n">endd</span><span class="p">)</span><span class="w"></span>
+<span class="w">                </span><span class="n">i</span><span class="w">  </span><span class="o">=</span><span class="p">(</span><span class="n">start</span><span class="o">+</span><span class="n">endd</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="w"></span>
+<span class="w">                </span><span class="n">d3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"></span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">lexical_lt</span><span class="p">(</span><span class="n">d1</span><span class="p">,</span><span class="n">d2</span><span class="p">,</span><span class="n">case_sensitive</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">                    if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">lexical_lt</span><span class="p">(</span><span class="n">d3</span><span class="p">,</span><span class="n">d1</span><span class="p">,</span><span class="n">case_sensitive</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">                        </span><span class="n">dmnmx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d1</span><span class="w"></span>
+<span class="w">                    </span><span class="n">elseif</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">lexical_lt</span><span class="p">(</span><span class="n">d3</span><span class="p">,</span><span class="n">d2</span><span class="p">,</span><span class="n">case_sensitive</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">                        </span><span class="n">dmnmx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d3</span><span class="w"></span>
+<span class="w">                    </span><span class="k">else</span>
+<span class="k">                        </span><span class="n">dmnmx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d2</span><span class="w"></span>
+<span class="w">                    </span><span class="k">endif</span>
+<span class="k">                </span><span class="n">elseif</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">lexical_lt</span><span class="p">(</span><span class="n">d3</span><span class="p">,</span><span class="n">d2</span><span class="p">,</span><span class="n">case_sensitive</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">                    </span><span class="n">dmnmx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d2</span><span class="w"></span>
+<span class="w">                </span><span class="n">elseif</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">lexical_lt</span><span class="p">(</span><span class="n">d3</span><span class="p">,</span><span class="n">d1</span><span class="p">,</span><span class="n">case_sensitive</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">                    </span><span class="n">dmnmx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d3</span><span class="w"></span>
+<span class="w">                </span><span class="k">else</span>
+<span class="k">                    </span><span class="n">dmnmx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d1</span><span class="w"></span>
+<span class="w">                </span><span class="k">endif</span>
 
-<span class="k">                </span><span class="n">i</span> <span class="o">=</span> <span class="n">start</span> <span class="o">-</span> <span class="mi">1</span>
-                <span class="n">j</span> <span class="o">=</span> <span class="n">endd</span> <span class="o">+</span> <span class="mi">1</span>
-                <span class="k">do</span>
+<span class="k">                </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">start</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">                </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">endd</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">                </span><span class="k">do</span>
 <span class="k">                    do</span>
-<span class="k">                        </span><span class="n">j</span> <span class="o">=</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span>
-                        <span class="k">if</span> <span class="p">(</span> <span class="n">lexical_le</span><span class="p">(</span><span class="n">str</span><span class="p">(</span><span class="n">j</span><span class="p">),</span><span class="n">dmnmx</span><span class="p">,</span><span class="n">case_sensitive</span><span class="p">)</span> <span class="p">)</span> <span class="k">exit</span>
+<span class="k">                        </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">                        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">lexical_le</span><span class="p">(</span><span class="n">str</span><span class="p">(</span><span class="n">j</span><span class="p">),</span><span class="n">dmnmx</span><span class="p">,</span><span class="n">case_sensitive</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">exit</span>
 <span class="k">                    end do</span>
 <span class="k">                    do</span>
-<span class="k">                        </span><span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
-                        <span class="k">if</span> <span class="p">(</span> <span class="n">lexical_ge</span><span class="p">(</span><span class="n">str</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="n">dmnmx</span><span class="p">,</span><span class="n">case_sensitive</span><span class="p">)</span> <span class="p">)</span> <span class="k">exit</span>
+<span class="k">                        </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">                        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">lexical_ge</span><span class="p">(</span><span class="n">str</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="n">dmnmx</span><span class="p">,</span><span class="n">case_sensitive</span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">exit</span>
 <span class="k">                    end do</span>
-<span class="k">                    if</span> <span class="p">(</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">j</span> <span class="p">)</span> <span class="k">then</span>
-<span class="k">                        </span><span class="n">tmp</span>   <span class="o">=</span> <span class="n">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-                        <span class="n">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">=</span> <span class="n">str</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
-                        <span class="n">str</span><span class="p">(</span><span class="n">j</span><span class="p">)</span> <span class="o">=</span> <span class="n">tmp</span>
-                    <span class="k">else</span>
+<span class="k">                    if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="n">j</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">                        </span><span class="n">tmp</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="n">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"></span>
+<span class="w">                        </span><span class="n">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">str</span><span class="p">(</span><span class="n">j</span><span class="p">)</span><span class="w"></span>
+<span class="w">                        </span><span class="n">str</span><span class="p">(</span><span class="n">j</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tmp</span><span class="w"></span>
+<span class="w">                    </span><span class="k">else</span>
 <span class="k">                        exit</span>
 <span class="k">                    endif</span>
 <span class="k">                end do</span>
-<span class="k">                if</span> <span class="p">(</span> <span class="n">j</span><span class="o">-</span><span class="n">start</span><span class="o">&gt;</span><span class="n">endd</span><span class="o">-</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span> <span class="p">)</span> <span class="k">then</span>
-<span class="k">                    </span><span class="n">stkpnt</span>          <span class="o">=</span> <span class="n">stkpnt</span> <span class="o">+</span> <span class="mi">1</span>
-                    <span class="n">stack</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">stkpnt</span><span class="p">)</span> <span class="o">=</span> <span class="n">start</span>
-                    <span class="n">stack</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">stkpnt</span><span class="p">)</span> <span class="o">=</span> <span class="n">j</span>
-                    <span class="n">stkpnt</span>          <span class="o">=</span> <span class="n">stkpnt</span> <span class="o">+</span> <span class="mi">1</span>
-                    <span class="n">stack</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">stkpnt</span><span class="p">)</span> <span class="o">=</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span>
-                    <span class="n">stack</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">stkpnt</span><span class="p">)</span> <span class="o">=</span> <span class="n">endd</span>
-                <span class="k">else</span>
-<span class="k">                    </span><span class="n">stkpnt</span>          <span class="o">=</span> <span class="n">stkpnt</span> <span class="o">+</span> <span class="mi">1</span>
-                    <span class="n">stack</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">stkpnt</span><span class="p">)</span> <span class="o">=</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span>
-                    <span class="n">stack</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">stkpnt</span><span class="p">)</span> <span class="o">=</span> <span class="n">endd</span>
-                    <span class="n">stkpnt</span>          <span class="o">=</span> <span class="n">stkpnt</span> <span class="o">+</span> <span class="mi">1</span>
-                    <span class="n">stack</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">stkpnt</span><span class="p">)</span> <span class="o">=</span> <span class="n">start</span>
-                    <span class="n">stack</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">stkpnt</span><span class="p">)</span> <span class="o">=</span> <span class="n">j</span>
-                <span class="k">endif</span>
+<span class="k">                if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">j</span><span class="o">-</span><span class="n">start</span><span class="o">&gt;</span><span class="n">endd</span><span class="o">-</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">                    </span><span class="n">stkpnt</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="n">stkpnt</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">                    </span><span class="n">stack</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">stkpnt</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">start</span><span class="w"></span>
+<span class="w">                    </span><span class="n">stack</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">stkpnt</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">j</span><span class="w"></span>
+<span class="w">                    </span><span class="n">stkpnt</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="n">stkpnt</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">                    </span><span class="n">stack</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">stkpnt</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">                    </span><span class="n">stack</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">stkpnt</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">endd</span><span class="w"></span>
+<span class="w">                </span><span class="k">else</span>
+<span class="k">                    </span><span class="n">stkpnt</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="n">stkpnt</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">                    </span><span class="n">stack</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">stkpnt</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">                    </span><span class="n">stack</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">stkpnt</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">endd</span><span class="w"></span>
+<span class="w">                    </span><span class="n">stkpnt</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="n">stkpnt</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">                    </span><span class="n">stack</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">stkpnt</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">start</span><span class="w"></span>
+<span class="w">                    </span><span class="n">stack</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">stkpnt</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">j</span><span class="w"></span>
+<span class="w">                </span><span class="k">endif</span>
 
 <span class="k">            endif</span>
 
-<span class="k">            if</span> <span class="p">(</span> <span class="n">stkpnt</span><span class="o">&lt;=</span><span class="mi">0</span> <span class="p">)</span> <span class="k">exit</span>
+<span class="k">            if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">stkpnt</span><span class="o">&lt;=</span><span class="mi">0</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">exit</span>
 
 <span class="k">        end do</span>
 
 <span class="k">    end if</span>
 
-<span class="k">    end subroutine </span><span class="n">lexical_sort_nonrecursive</span>
+<span class="k">    end subroutine </span><span class="n">lexical_sort_nonrecursive</span><span class="w"></span>
 </pre></div>
 
     </section>
     <br>
     
-    
     </div>
   </div>
-
 
     <hr>    
     </div> <!-- /container -->
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-6"><p>stringsort was developed by Jacob Williams<br>&copy; 2021 
-                                          </p>
+        <div class="col-xs-6 col-md-6"><p>stringsort was developed by Jacob Williams<br>&copy; 2022 
+</p>
         </div>
         <div class="col-xs-6 col-md-6">
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
-            
-            
           </p>
         </div>
       </div>
@@ -499,14 +345,11 @@ increasing order (<code>str(1) &lt;= ... &lt;= str(n)</code>)</p></td>
         extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
       });
     </script>
-    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
     
     <script src="../tipuesearch/tipuesearch_content.js"></script>
     <script src="../tipuesearch/tipuesearch_set.js"></script>
     <script src="../tipuesearch/tipuesearch.js"></script>
-    
     
   </body>
 </html>
