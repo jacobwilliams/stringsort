@@ -1,7 +1,9 @@
 ![stringsort](media/logo.png)
 ============
 
-![Build Status](https://github.com/jacobwilliams/stringsort/actions/workflows/CI.yml/badge.svg)
+[![CI Status](https://github.com/jacobwilliams/stringsort/actions/workflows/CI.yml/badge.svg)](https://github.com/jacobwilliams/stringsort/actions)
+[![GitHub release](https://img.shields.io/github/release/jacobwilliams/stringsort.svg?style=plastic)](https://github.com/jacobwilliams/stringsort/releases/latest)
+[![codecov](https://codecov.io/gh/jacobwilliams/stringsort/branch/master/graph/badge.svg?token=43HK33CSMY)](https://codecov.io/gh/jacobwilliams/stringsort)
 
 ### Description
 
