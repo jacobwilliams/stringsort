@@ -11,7 +11,7 @@ Just some Fortran sorting routines for strings.
 
 ### Building
 
-Stringsort and the test programs will build with any modern Fortran compiler. A [Fortran Package Manager](https://github.com/fortran-lang/fpm) manifest file (`fmp.toml`) is included, so that the library and tests cases can be compiled with FPM. For example:
+Stringsort and the test programs will build with any modern Fortran compiler. A [Fortran Package Manager](https://github.com/fortran-lang/fpm) manifest file (`fpm.toml`) is included, so that the library and tests cases can be compiled with FPM. For example:
 
 ```
 fpm build --profile release
@@ -27,7 +27,7 @@ stringsort = { git="https://github.com/jacobwilliams/stringsort.git" }
 To generate the documentation using [ford](https://github.com/Fortran-FOSS-Programmers/ford), run:
 
 ```
-  ford stringsort.md
+  ford ford.md
 ```
 
 ### Documentation
